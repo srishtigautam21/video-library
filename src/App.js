@@ -1,8 +1,15 @@
 import "./App.css";
+import { HomePage } from "./pages/index";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>hello</>
+    // <>hello</>
+    <>
+      <Routes>
+        <Route to='/homePage' element={<HomePage />} />
+      </Routes>
+    </>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} alt="mockBee logo" width="180" height="180" />
