@@ -13,7 +13,12 @@
 .main-content {
   grid-area: main-content;
 }
-
+.hero-img {
+  width: 100%;
+  height: auto;
+  max-width: 60vw;
+  object-fit: cover;
+}
 /* .sidebar {
   grid-area: sidebar;
 

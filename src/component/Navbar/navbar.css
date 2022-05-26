@@ -24,6 +24,10 @@
   max-width: 25rem;
   width: 100%;
 }
+.video-lib-header {
+  font-family: "Pacifico", cursive;
+  font-weight: 500;
+}
 .link:hover {
   cursor: pointer;
   color: var(--PRIMARY-HOVER);

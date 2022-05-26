@@ -8,9 +8,9 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <nav className='nav-component nav-padding'>
-        <div className='content-header'>
+        <div className='content-header video-lib-header'>
           <Link className='component-libraryl-link' to='/'>
-            nutrismart TV
+            nutrismart<span style={{ color: "orange" }}> TV</span>
           </Link>
         </div>
         <li className='icons-alignment'>

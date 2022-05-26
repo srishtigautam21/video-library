@@ -18,13 +18,13 @@
   cursor: pointer;
 }
 
-/* .active-link {
-  background-color: var(--darkerofseconadary);
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-} */
+.active-link {
+  color: var(--COLOR-PRIMARY);
+  /* border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem; */
+}
 .inactive-link:hover {
-  background-color: rgb(222, 222, 222);
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
+  color: rgb(222, 222, 222);
+  /* border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem; */
 }
