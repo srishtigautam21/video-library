@@ -1,0 +1,30 @@
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--COLOR-WHITE);
+  display: flex;
+  flex-direction: column;
+}
+/* .md-margin {
+  margin-top: 2rem;
+} */
+.md-pd {
+  padding: 1.2rem 0.5rem 1.2rem 1.5rem;
+}
+.aside-heading {
+  text-decoration: none;
+  /* font-weight: 500; */
+  /* font-size: 2rem; */
+  color: var(--COLOR-BLACK);
+  cursor: pointer;
+}
+
+/* .active-link {
+  background-color: var(--darkerofseconadary);
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+} */
+.inactive-link:hover {
+  background-color: rgb(222, 222, 222);
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}

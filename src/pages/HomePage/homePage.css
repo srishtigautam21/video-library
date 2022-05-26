@@ -1,0 +1,22 @@
+.home-page {
+  display: grid;
+  height: 100vh;
+}
+.grid-container {
+  grid-template-columns: 0.1fr 2fr;
+  grid-template-rows: 0.3fr 3fr;
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar main-content"
+    "sidebar main-content";
+}
+.main-content {
+  grid-area: main-content;
+}
+
+/* .sidebar {
+  grid-area: sidebar;
+
+  display: flex;
+  flex-direction: column;
+} */

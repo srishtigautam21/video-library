@@ -5,9 +5,11 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     // <>hello</>
+    // "react": "^18.1.0",
+    // "react-dom": "^18.1.0",
     <>
       <Routes>
-        <Route to='/homePage' element={<HomePage />} />
+        <Route path='/' element={<HomePage />} />
       </Routes>
     </>
     // <div className="App">
