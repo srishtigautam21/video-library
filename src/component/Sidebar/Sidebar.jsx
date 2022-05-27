@@ -16,15 +16,6 @@ const Sidebar = () => {
           <HomeIcon />
           <small>Home</small>
         </NavLink>
-        {/* <NavLink to='/labels' className={activeStyle}>
-         
-        </NavLink>
-        <NavLink to='/archive' className={activeStyle}>
-          Archive
-        </NavLink>
-        <NavLink to='/trash' className={activeStyle}>
-          Trash
-        </NavLink> */}
       </div>
     </>
   );
