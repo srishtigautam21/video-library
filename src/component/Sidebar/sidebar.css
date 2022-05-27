@@ -1,0 +1,20 @@
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--COLOR-WHITE);
+  display: flex;
+  flex-direction: column;
+}
+.md-pd {
+  padding: 1.2rem 0.5rem 1.2rem 1.5rem;
+}
+.aside-heading {
+  text-decoration: none;
+  color: var(--COLOR-BLACK);
+  cursor: pointer;
+}
+.active-link {
+  color: var(--COLOR-PRIMARY);
+}
+.inactive-link:hover {
+  color: var(--INACTIVE-LINK);
+}
