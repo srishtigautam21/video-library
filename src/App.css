@@ -4,3 +4,6 @@ body {
   font-family: "Pacifico", cursive;
   font-family: "Roboto", sans-serif;
 }
+:root {
+  --VIDEO-LIB-BACKGROUND-COLOR: rgb(245, 245, 220);
+}
