@@ -6,4 +6,5 @@ body {
 }
 :root {
   --VIDEO-LIB-BACKGROUND-COLOR: rgb(245, 245, 220);
+  --INACTIVE-LINK: rgb(222, 222, 222);
 }
