@@ -1,7 +1,6 @@
 .navbar {
   grid-area: navbar;
   box-shadow: 2px 2px 10px var(--BOX-SHADOW-LIGHTER);
-  /* border-bottom: 1px solid var(--COLOR-SOCIAL-ICON); */
   background-color: var(--COLOR-WHITE);
 }
 .nav-padding {
