@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./sidebar.css";
-import { HomeIcon } from "../../Assets/allsvg";
+import { HomeIcon, ExploreIcon } from "../../Assets/allsvg";
 
 const Sidebar = () => {
   const activeStyle = ({ isActive }) => {
@@ -15,6 +15,10 @@ const Sidebar = () => {
         <NavLink to='/' className={activeStyle}>
           <HomeIcon />
           <small>Home</small>
+        </NavLink>
+        <NavLink to='/explorePage' className={activeStyle}>
+          <ExploreIcon />
+          <small>Explore</small>
         </NavLink>
       </div>
     </>
