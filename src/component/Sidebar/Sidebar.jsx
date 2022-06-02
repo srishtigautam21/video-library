@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./sidebar.css";
-import { HomeIcon, ExploreIcon } from "../../Assets/allsvg";
+import { HomeIcon, ExploreIcon, PlaylistIcon } from "../../Assets/allsvg";
 
 const Sidebar = () => {
   const activeStyle = ({ isActive }) => {
@@ -19,6 +19,10 @@ const Sidebar = () => {
         <NavLink to='/explorePage' className={activeStyle}>
           <ExploreIcon />
           <small>Explore</small>
+        </NavLink>
+        <NavLink to='/playlist' className={activeStyle}>
+          <PlaylistIcon />
+          <small>Playlist</small>
         </NavLink>
       </div>
     </>
