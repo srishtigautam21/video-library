@@ -1,13 +1,19 @@
 import "./App.css";
-import { HomePage } from "./pages/index";
+import { HomePage, VideoListingPage } from "./pages/index";
+import { Navbar, Sidebar } from "./component";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-      </Routes>
+      <div className='home-page grid-container'>
+        <Navbar />
+        <Sidebar />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/explorePage' element={<VideoListingPage />} />
+        </Routes>
+      </div>
     </>
   );
 }
