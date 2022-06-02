@@ -29,7 +29,7 @@ const Navbar = () => {
                     to='/'
                     onClick={() => {
                       logOut();
-                      setOpen((open) => !open);
+                      setOpen((visible) => !visible);
                     }}
                   >
                     Logout

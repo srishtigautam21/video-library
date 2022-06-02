@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-import { useAxios } from "../custom-hooks/useAxios";
+import { useAxios } from "../customHooks/useAxios";
 
 const AuthContext = createContext({});
 const AuthProvider = ({ children }) => {

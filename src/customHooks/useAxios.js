@@ -3,7 +3,7 @@ import { useState } from "react";
 
 axios.defaults.baseURL = "";
 
-const useAxios = () => {
+export const useAxios = () => {
   const [response, setResponse] = useState(undefined);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -17,7 +17,7 @@ const useAxios = () => {
     } finally {
       setLoading(false);
     }
-    return { response, loading, error, fetchData };
   };
+  return { response, loading, error, fetchData };
 };
-export { useAxios };
+// export { useAxios };
