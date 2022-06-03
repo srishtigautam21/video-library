@@ -1,14 +1,18 @@
 import { createContext, useContext, useState, useEffect } from "react";
-
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAxios } from "../customHooks/useAxios";
 
 const AuthContext = createContext({});
 const AuthProvider = ({ children }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const { response, loading, error, fetchData } = useAxios();
   const [loginUser, setLoginUser] = useState({ email: "", password: "" });
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [encodedToken, setEncodedToken] = useState(null);
+
+  let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     let videoLibToken = localStorage.getItem("myToken");
@@ -25,12 +29,14 @@ const AuthProvider = ({ children }) => {
       data: { email: loginUser.email, password: loginUser.password },
     });
     setLoginUser({ email: "", password: "" });
+    navigate(from, { replace: true });
     setIsUserLoggedIn(true);
   };
 
   const logOut = () => {
     localStorage.clear();
     setEncodedToken(null);
+    setIsUserLoggedIn(false);
     setUser({});
   };
 
