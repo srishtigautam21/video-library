@@ -4,10 +4,11 @@ import {
   VideoListingPage,
   LoginPage,
   PlaylistPage,
+  SingleVideoPage,
 } from "./pages/index";
 import { Navbar, Sidebar } from "./component";
 import { Route, Routes } from "react-router-dom";
-import { RequireAuth } from "./utils/RequireAuth";
+import { RequireAuth } from "./customHooks/RequireAuth";
 
 function App() {
   return (
@@ -24,6 +25,14 @@ function App() {
             element={
               <RequireAuth>
                 <PlaylistPage />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='/video/:videoId'
+            element={
+              <RequireAuth>
+                <SingleVideoPage />
               </RequireAuth>
             }
           />

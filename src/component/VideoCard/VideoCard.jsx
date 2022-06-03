@@ -1,10 +1,16 @@
+import { SingleVideoPage } from "../../pages";
 import "./videocard.css";
+// import { Link } from "react-router-dom";
 
 const VideoCard = ({ video }) => {
-  const { title, creator, thumbnail, creatorDp, views } = video;
+  const { title, creator, thumbnail, creatorDp, views, _id } = video;
   return (
     <>
-      <div className=' videocard-container parent-positioning '>
+      {/* <Link to={`${_id}`} state={video}> */}
+      <div
+        className=' videocard-container parent-positioning '
+        onClick={() => SingleVideoPage(_id)}
+      >
         <img src={thumbnail} alt={title} />
         <div className='inside-container '>
           <div className='video-title'>
@@ -17,6 +23,7 @@ const VideoCard = ({ video }) => {
           </div>
         </div>
       </div>
+      {/* </Link> */}
     </>
   );
 };
