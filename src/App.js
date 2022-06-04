@@ -29,7 +29,7 @@ function App() {
             }
           />
           <Route
-            path='/video/:videoId'
+            path='/video/:id'
             element={
               <RequireAuth>
                 <SingleVideoPage />
