@@ -28,14 +28,7 @@ function App() {
               </RequireAuth>
             }
           />
-          <Route
-            path='/video/:id'
-            element={
-              <RequireAuth>
-                <SingleVideoPage />
-              </RequireAuth>
-            }
-          />
+          <Route path='/video/:id' element={<SingleVideoPage />} />
         </Routes>
       </div>
     </>
