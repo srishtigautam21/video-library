@@ -2,11 +2,10 @@ import { useParams, useLocation } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./singleVideoPage.css";
 import { LikeIcon, PlaylistIcon, ClockIcon } from "../../Assets/allsvg";
-// import { videos } from "../../backend/db/videos";
 
 const SingleVideoPage = () => {
   const { id } = useParams();
-  // const {title, creator, thumbnail, creatorDp, views, _id}=videos;
+
   const { state } = useLocation();
   const video = state;
   const videoOnReady = (event) => {
@@ -15,8 +14,8 @@ const SingleVideoPage = () => {
     player.seekTo(0);
   };
   const opts = {
-    height: "450", //390
-    width: "700", //640
+    height: "450",
+    width: "700",
     playerVars: {
       autoplay: 0,
     },
@@ -66,7 +65,7 @@ const SingleVideoPage = () => {
                 />
                 <div className='incr-font-creator'>{video.creator}</div>
               </div>
-              {/* Future TODOs:will ad the video description */}
+              {/* Future TODOs:will add the video description */}
               {/* <div className='video-discription'>{video.description}</div> */}
             </div>
           </div>
