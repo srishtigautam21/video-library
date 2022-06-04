@@ -1,0 +1,59 @@
+.videoPage-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.video-container {
+  margin-top: 2rem;
+}
+.videoPage-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+.video-operation {
+  display: flex;
+  justify-content: space-between;
+}
+.youtube-icons {
+  display: flex;
+  gap: 1rem;
+}
+.video-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.video-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.video-item .video-btn {
+  display: flex;
+  align-items: center;
+}
+.incr-font {
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding-right: 3px;
+}
+.video-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.video-creator-name {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+.incr-font-creator {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.video-creator-round-img {
+  border-radius: 50%;
+}

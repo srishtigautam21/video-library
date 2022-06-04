@@ -17,7 +17,7 @@ export const videos = [
   },
   {
     _id: "2wZI4S7V2Kk",
-    title: "Simple & Tasty 6 Vegan Breakfast Recipes ",
+    title: "Simple 6 Vegan Breakfast Recipes ",
     creator: "Radhi Devlukia",
     description:
       "HEY MY SWEET LITTLE BUTTERCUPS. I HAVE 6 OF MY GO TO BREAKFASTS FOR YA..3 SWEET & 3 SAVORY FOR EVERY MOOD! Being plant based does not have to be boring at any meal time, so many vibrant dishes with soooo much flavor in each! ",
@@ -83,8 +83,7 @@ export const videos = [
   },
   {
     _id: "r-m9pMs8Ya0",
-    title:
-      "6 easy & healthy non deep fried snacks | instant oil free snacks recipes ",
+    title: "6 easy & healthy non deep fried snacks",
     creator: "Hebbars Kitchen",
     description:
       "These non deep fried snacks are easy to make and healthy for your body.",
@@ -95,7 +94,7 @@ export const videos = [
   },
   {
     _id: "o-7X96WS9XE",
-    title: "3 Easy Snacks for the Evening Hunger || Dr. Hansaji Yogendra",
+    title: "3 Easy Snacks for the Evening Hunger",
     creator: "The Yoga Institute",
     description:
       "Yoga recommends Mitaahara, which is eating in moderation, and when you are hungry.In this video, we will show some healthy snack recipes that you can eat as your healthy evening snacks.",
@@ -106,7 +105,7 @@ export const videos = [
   },
   {
     _id: "P9evmGkXctI",
-    title: "7 Dinner Recipes for Weight Loss | Vegetarian Dishes",
+    title: "7 Dinner Recipes for Weight Loss",
     creator: "GunjanShouts",
     description:
       "Watch these 7 delicious dinner recipes for weight loss.These are Easy, Tasty and Healthy that you can even enjoy when you are on your weight loss journey. All the dishes are different from our regular meals. These one pot meals are so easy that anyone can make at home, hostel or pg.",
@@ -128,8 +127,7 @@ export const videos = [
   },
   {
     _id: "M5y67ueLqEQ",
-    title:
-      "6 light healthy dinner ideas | light dinner recipes for weight loss",
+    title: "6 light healthy dinner ideas ",
     creator: "Hebbars Kitchen",
     description:
       "Do try out these 6 dinner recepies and tell me about your reviews.",
