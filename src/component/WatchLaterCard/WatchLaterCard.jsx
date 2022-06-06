@@ -34,13 +34,6 @@ const WatchLaterCard = ({ videoCard }) => {
           </div>
         </div>
       </div>
-
-      {/* <button
-        className='video-btn btn-position'
-        onClick={() => deleteWatchLaterHandler(_id)}
-      >
-        <DeleteIcon />
-      </button> */}
     </>
   );
 };
