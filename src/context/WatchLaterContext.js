@@ -10,6 +10,7 @@ const WatchLaterProvider = ({ children }) => {
   const navigate = useNavigate();
   const [likedVideoList, setLikedVideoList] = useState([]);
   const [watchLaterList, setWatchLaterList] = useState([]);
+  const [historyList, setHistoryList] = useState([]);
 
   const addToWatchLater = async (video) => {
     const encodedToken = localStorage.getItem("myToken");
@@ -37,7 +38,6 @@ const WatchLaterProvider = ({ children }) => {
         config
       );
       setWatchLaterList(response.data.watchlater);
-      navigate("/explorePage");
     } catch (e) {
       console.error(e);
     }
@@ -47,8 +47,44 @@ const WatchLaterProvider = ({ children }) => {
     const encodedToken = localStorage.getItem("myToken");
     const config = { headers: { authorization: encodedToken } };
     try {
-      const response = await axios.post("/api/user/likes", config);
+      const response = await axios.post("/api/user/likes", { video }, config);
       setLikedVideoList(response.data.likes);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const unlikeVideoHandler = async (videoId) => {
+    const encodedToken = localStorage.getItem("myToken");
+    const config = { headers: { authorization: encodedToken } };
+    try {
+      const response = await axios.delete(`/api/user/likes/${videoId}`, config);
+      setLikedVideoList(response.data.likes);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const addToHistory = async (video) => {
+    const encodedToken = localStorage.getItem("myToken");
+    const config = { headers: { authorization: encodedToken } };
+    try {
+      const response = await axios.post("/api/user/history", { video }, config);
+      setHistoryList(response.data.history);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const deleteFromHistory = async (videoId) => {
+    const encodedToken = localStorage.getItem("myToken");
+    const config = { headers: { authorization: encodedToken } };
+    try {
+      const response = await axios.delete(
+        `/api/user/history/${videoId}`,
+        config
+      );
+      setHistoryList(response.data.history);
     } catch (e) {
       console.error(e);
     }
@@ -61,6 +97,11 @@ const WatchLaterProvider = ({ children }) => {
         deleteFromWatchLater,
         addToLikedVideo,
         likedVideoList,
+        unlikeVideoHandler,
+        addToHistory,
+        setHistoryList,
+        historyList,
+        deleteFromHistory,
       }}
     >
       {children}

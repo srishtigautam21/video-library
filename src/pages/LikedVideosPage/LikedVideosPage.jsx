@@ -6,7 +6,7 @@ const LikedVideosPage = () => {
   return (
     <>
       <div className='watch-later-container'>
-        {likedVideoList.map((videoCard) => (
+        {likedVideoList?.map((videoCard) => (
           <LikedVideoCard key={videoCard._id} videoCard={videoCard} />
         ))}
       </div>

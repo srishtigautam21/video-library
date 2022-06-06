@@ -78,12 +78,22 @@ function LikeIconFilled(props) {
     <svg width='20' height='20' viewBox='0 0 24 24' {...props}>
       <path
         d='M4 21h1V8H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2zM20 8h-7l1.122-3.368A2 2 0 0 0 12.225 2H12L7 7.438V21h11l3.912-8.596L22 12v-2a2 2 0 0 0-2-2z'
-        fill='currentColor'
+        fill='green'
       ></path>
     </svg>
   );
 }
 
+function HistoryIcon(props) {
+  return (
+    <svg width='20' height='20' viewBox='0 0 24 24' {...props}>
+      <path
+        fill='currentColor'
+        d='M12.95 21q-1.7 0-3.313-.637Q8.025 19.725 6.7 18.4L8.1 17q1.025.975 2.3 1.488Q11.675 19 13 19q2.9 0 4.95-2.05Q20 14.9 20 12q0-2.9-2.05-4.95Q15.9 5 13 5q-2.875 0-4.938 2.012Q6 9.025 6 12.2l1.85-1.85l1.4 1.4L5 16L.75 11.75l1.45-1.4L4 12.2q0-1.95.7-3.638q.7-1.687 1.925-2.925Q7.85 4.4 9.488 3.7Q11.125 3 13 3q1.85 0 3.488.712q1.637.713 2.862 1.938t1.938 2.862Q22 10.15 22 12t-.712 3.488q-.713 1.637-1.938 2.862t-2.875 1.938Q14.825 21 12.95 21Zm2.85-4.8L12 12.4V7h2v4.6l3.2 3.2Z'
+      ></path>
+    </svg>
+  );
+}
 export {
   UserIcon,
   HomeIcon,
@@ -93,4 +103,5 @@ export {
   ClockIcon,
   DeleteIcon,
   LikeIconFilled,
+  HistoryIcon,
 };

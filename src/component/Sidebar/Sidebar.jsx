@@ -6,6 +6,7 @@ import {
   PlaylistIcon,
   ClockIcon,
   LikeIcon,
+  HistoryIcon,
 } from "../../Assets/allsvg";
 
 const Sidebar = () => {
@@ -37,6 +38,10 @@ const Sidebar = () => {
         <NavLink to='/liked' className={activeStyle}>
           <LikeIcon />
           <small>Liked Videos</small>
+        </NavLink>
+        <NavLink to='/history' className={activeStyle}>
+          <HistoryIcon />
+          <small>History</small>
         </NavLink>
       </div>
     </>

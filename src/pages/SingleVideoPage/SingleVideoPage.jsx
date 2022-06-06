@@ -2,11 +2,22 @@ import { useParams, useLocation } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./singleVideoPage.css";
 import { useWatchLater } from "../../context/WatchLaterContext";
-import { LikeIcon, PlaylistIcon, ClockIcon } from "../../Assets/allsvg";
+import {
+  LikeIcon,
+  PlaylistIcon,
+  ClockIcon,
+  LikeIconFilled,
+} from "../../Assets/allsvg";
 
 const SingleVideoPage = () => {
   const { id } = useParams();
-  const { addToWatchLater, watchLaterList } = useWatchLater();
+  const {
+    addToWatchLater,
+    watchLaterList,
+    addToLikedVideo,
+    likedVideoList,
+    unlikeVideoHandler,
+  } = useWatchLater();
   const { state } = useLocation();
   const video = state;
   const videoOnReady = (event) => {
@@ -21,6 +32,7 @@ const SingleVideoPage = () => {
       autoplay: 1,
     },
   };
+  const isLiked = likedVideoList.findIndex((like) => like._id === video._id);
   const isInWatchLater = watchLaterList.findIndex(
     (watchlater) => watchlater._id === video._id
   );
@@ -38,12 +50,27 @@ const SingleVideoPage = () => {
               <p>{video.views} views</p>
               <div className='youtube-icons'>
                 <div className='video-item'>
-                  <button className='video-btn'>
-                    <span>
-                      <LikeIcon className='incr-font' />
-                    </span>
-                    <p className='incr-font'>Like</p>
-                  </button>
+                  {isLiked === -1 ? (
+                    <button
+                      className='video-btn'
+                      onClick={() => addToLikedVideo(video)}
+                    >
+                      <span>
+                        <LikeIcon className='incr-font' />
+                      </span>
+                      <p className='incr-font'>Like</p>
+                    </button>
+                  ) : (
+                    <button
+                      className='video-btn'
+                      onClick={() => unlikeVideoHandler(video._id)}
+                    >
+                      <span>
+                        <LikeIconFilled className='incr-font' />
+                      </span>
+                      <p className='incr-font video-icon-color'>Like</p>
+                    </button>
+                  )}
                 </div>
                 <div className='video-item'>
                   {isInWatchLater === -1 ? (

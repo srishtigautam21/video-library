@@ -60,3 +60,6 @@
 .btn-disable {
   cursor: not-allowed;
 }
+.video-icon-color {
+  color: var(--COLOR-PRIMARY);
+}
