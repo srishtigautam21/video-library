@@ -1,51 +1,68 @@
 import { useContext, createContext, useState } from "react";
-// import { useAuth } from "./AuthContext";
+
 import axios from "axios";
-// import { useAxios } from "../customHooks/useAxios";
-// import { useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 
 const WatchLaterContext = createContext({});
 
 const WatchLaterProvider = ({ children }) => {
-  // const { encodedToken } = useAuth();
-  // const navigate = useNavigate();
-  // const { response, fetchData } = useAxios();
+  const navigate = useNavigate();
+  const [likedVideoList, setLikedVideoList] = useState([]);
   const [watchLaterList, setWatchLaterList] = useState([]);
 
-  const watchLaterHandler = async (video) => {
-    debugger;
-    console.log("in watch later context");
-    console.log(video);
+  const addToWatchLater = async (video) => {
     const encodedToken = localStorage.getItem("myToken");
-    console.log(video._id);
-    // if (encodedToken === null) {
-    //   navigate("/login");
-    // }
+
+    if (encodedToken === null) {
+      navigate("/login");
+    }
     const config = { headers: { authorization: encodedToken } };
     try {
-      const response = await axios.post(
-        "/api/user/watchlater",
-        { video },
-        config
-      );
-      debugger;
-      console.log(response.data.watchlater);
-      setWatchLaterList(response.data.watchlater); //(prev) => [...prev, response.data.watchlater]
+      const {
+        data: { watchlater },
+      } = await axios.post("/api/user/watchlater", { video }, config);
+
+      setWatchLaterList(watchlater);
     } catch (e) {
       console.error(e);
-      // errorToast("Some Unwanted error occured");
     }
-    // fetchData({
-    //   method: "post",
-    //   url: "/api/user/watchlater",
-    //   headers: { authorization: encodedToken },
-    //   data: { video },
-    // });
-    // console.log(response ?? response.watchlater);
-    // setWatchLater(response?.watchlater);
+  };
+  const deleteFromWatchLater = async (videoId) => {
+    const encodedToken = localStorage.getItem("myToken");
+    const config = { headers: { authorization: encodedToken } };
+    try {
+      const response = await axios.delete(
+        `/api/user/watchlater/${videoId}`,
+        config
+      );
+      setWatchLaterList(response.data.watchlater);
+      navigate("/explorePage");
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const addToLikedVideo = async (video) => {
+    const encodedToken = localStorage.getItem("myToken");
+    const config = { headers: { authorization: encodedToken } };
+    try {
+      const response = await axios.post("/api/user/likes", config);
+      setLikedVideoList(response.data.likes);
+    } catch (e) {
+      console.error(e);
+    }
   };
   return (
-    <WatchLaterContext.Provider value={{ watchLaterHandler, watchLaterList }}>
+    <WatchLaterContext.Provider
+      value={{
+        addToWatchLater,
+        watchLaterList,
+        deleteFromWatchLater,
+        addToLikedVideo,
+        likedVideoList,
+      }}
+    >
       {children}
     </WatchLaterContext.Provider>
   );

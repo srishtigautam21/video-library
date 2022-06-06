@@ -62,4 +62,35 @@ function ClockIcon(props) {
     </svg>
   );
 }
-export { UserIcon, HomeIcon, ExploreIcon, PlaylistIcon, LikeIcon, ClockIcon };
+function DeleteIcon(props) {
+  return (
+    <svg width='20' height='20' viewBox='0 0 28 28' {...props}>
+      <path
+        fill='currentColor'
+        d='M11.5 6h5a2.5 2.5 0 0 0-5 0ZM10 6a4 4 0 0 1 8 0h6.25a.75.75 0 0 1 0 1.5h-1.31l-1.217 14.603A4.25 4.25 0 0 1 17.488 26h-6.976a4.25 4.25 0 0 1-4.235-3.897L5.06 7.5H3.75a.75.75 0 0 1 0-1.5H10Zm2.5 5.75a.75.75 0 0 0-1.5 0v8.5a.75.75 0 0 0 1.5 0v-8.5Zm3.75-.75a.75.75 0 0 0-.75.75v8.5a.75.75 0 0 0 1.5 0v-8.5a.75.75 0 0 0-.75-.75Z'
+      ></path>
+    </svg>
+  );
+}
+
+function LikeIconFilled(props) {
+  return (
+    <svg width='20' height='20' viewBox='0 0 24 24' {...props}>
+      <path
+        d='M4 21h1V8H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2zM20 8h-7l1.122-3.368A2 2 0 0 0 12.225 2H12L7 7.438V21h11l3.912-8.596L22 12v-2a2 2 0 0 0-2-2z'
+        fill='currentColor'
+      ></path>
+    </svg>
+  );
+}
+
+export {
+  UserIcon,
+  HomeIcon,
+  ExploreIcon,
+  PlaylistIcon,
+  LikeIcon,
+  ClockIcon,
+  DeleteIcon,
+  LikeIconFilled,
+};

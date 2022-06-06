@@ -6,6 +6,7 @@ import {
   PlaylistPage,
   SingleVideoPage,
   WatchLaterPage,
+  LikedVideosPage,
 } from "./pages/index";
 import { Navbar, Sidebar } from "./component";
 import { Route, Routes } from "react-router-dom";
@@ -34,6 +35,14 @@ function App() {
             element={
               <RequireAuth>
                 <WatchLaterPage />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='/liked'
+            element={
+              <RequireAuth>
+                <LikedVideosPage />
               </RequireAuth>
             }
           />

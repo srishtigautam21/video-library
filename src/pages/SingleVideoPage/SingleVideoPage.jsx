@@ -6,7 +6,7 @@ import { LikeIcon, PlaylistIcon, ClockIcon } from "../../Assets/allsvg";
 
 const SingleVideoPage = () => {
   const { id } = useParams();
-  const { watchLaterHandler } = useWatchLater();
+  const { addToWatchLater, watchLaterList } = useWatchLater();
   const { state } = useLocation();
   const video = state;
   const videoOnReady = (event) => {
@@ -20,6 +20,12 @@ const SingleVideoPage = () => {
     playerVars: {
       autoplay: 1,
     },
+  };
+  const isInWatchLater = watchLaterList.findIndex(
+    (watchlater) => watchlater._id === video._id
+  );
+  const watchLaterHandler = (video) => {
+    addToWatchLater(video);
   };
   return (
     <>
@@ -40,15 +46,24 @@ const SingleVideoPage = () => {
                   </button>
                 </div>
                 <div className='video-item'>
-                  <button
-                    className='video-btn'
-                    onClick={() => watchLaterHandler(video)}
-                  >
-                    <span>
-                      <ClockIcon className='incr-font' />
-                    </span>
-                    <p className='incr-font'>Watch Later</p>
-                  </button>
+                  {isInWatchLater === -1 ? (
+                    <button
+                      className='video-btn'
+                      onClick={() => watchLaterHandler(video)}
+                    >
+                      <span>
+                        <ClockIcon className='incr-font' />
+                      </span>
+                      <p className='incr-font'>Watch Later</p>
+                    </button>
+                  ) : (
+                    <button className='video-btn btn-disable' disabled>
+                      <span>
+                        <ClockIcon className='incr-font' />
+                      </span>
+                      <p className='incr-font'>Watch Later</p>
+                    </button>
+                  )}
                 </div>
                 <div className='video-item'>
                   <button className='video-btn'>

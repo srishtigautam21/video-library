@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
-import "./watchLaterCard.css";
-import { DeleteIcon } from "../../Assets/allsvg";
-import { useWatchLater } from "../../context/WatchLaterContext";
-
-const WatchLaterCard = ({ videoCard }) => {
-  const { deleteFromWatchLater } = useWatchLater();
+import { LikeIconFilled } from "../../Assets/allsvg";
+const LikedVideoCard = ({ videoCard }) => {
   const { title, creator, thumbnail, creatorDp, views, _id } = videoCard;
   return (
     <>
@@ -22,9 +18,9 @@ const WatchLaterCard = ({ videoCard }) => {
                 <p>{views} views</p>
                 <button
                   className='video-btn'
-                  onClick={() => deleteFromWatchLater(_id)}
+                  // onClick={() => deleteFromWatchLater(_id)}
                 >
-                  <DeleteIcon />
+                  <LikeIconFilled />
                 </button>
               </div>
             </div>
@@ -34,4 +30,4 @@ const WatchLaterCard = ({ videoCard }) => {
     </>
   );
 };
-export { WatchLaterCard };
+export { LikedVideoCard };

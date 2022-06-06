@@ -4,7 +4,6 @@ import "./watchLaterPage.css";
 
 const WatchLaterPage = () => {
   const { watchLaterList } = useWatchLater();
-  console.log(watchLaterList);
   return (
     <>
       <div className='watch-later-container'>

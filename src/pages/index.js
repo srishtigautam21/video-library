@@ -4,3 +4,4 @@ export { LoginPage } from "./LoginPage/LoginPage";
 export { PlaylistPage } from "./PlaylistPage/PlaylistPage";
 export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
 export { WatchLaterPage } from "./WatchLaterPage/WatchLaterPage";
+export { LikedVideosPage } from "./LikedVideosPage/LikedVideosPage";

@@ -25,3 +25,7 @@
 .video-creator {
   padding-left: 4rem;
 }
+.watch-later-card {
+  display: flex;
+  justify-content: space-between;
+}

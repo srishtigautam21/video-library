@@ -57,3 +57,6 @@
 .video-creator-round-img {
   border-radius: 50%;
 }
+.btn-disable {
+  cursor: not-allowed;
+}
