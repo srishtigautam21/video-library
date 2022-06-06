@@ -1,0 +1,27 @@
+.creator {
+  width: 100%;
+  max-width: 3rem;
+  max-height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.video-title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.videocard-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 35rem;
+  background-color: var(--COLOR-WHITE);
+  box-shadow: 0px 3px 10px var(--BOX-SHADOW-LIGHTER);
+  margin-bottom: 3.2rem;
+}
+.videocard-container:hover {
+  cursor: pointer;
+  border: 2px solid var(--COLOR-PRIMARY);
+}
+.video-creator {
+  padding-left: 4rem;
+}

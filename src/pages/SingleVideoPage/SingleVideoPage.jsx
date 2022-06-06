@@ -1,11 +1,12 @@
 import { useParams, useLocation } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./singleVideoPage.css";
+import { useWatchLater } from "../../context/WatchLaterContext";
 import { LikeIcon, PlaylistIcon, ClockIcon } from "../../Assets/allsvg";
 
 const SingleVideoPage = () => {
   const { id } = useParams();
-
+  const { watchLaterHandler } = useWatchLater();
   const { state } = useLocation();
   const video = state;
   const videoOnReady = (event) => {
@@ -17,7 +18,7 @@ const SingleVideoPage = () => {
     height: "450",
     width: "700",
     playerVars: {
-      autoplay: 0,
+      autoplay: 1,
     },
   };
   return (
@@ -39,7 +40,10 @@ const SingleVideoPage = () => {
                   </button>
                 </div>
                 <div className='video-item'>
-                  <button className='video-btn'>
+                  <button
+                    className='video-btn'
+                    onClick={() => watchLaterHandler(video)}
+                  >
                     <span>
                       <ClockIcon className='incr-font' />
                     </span>

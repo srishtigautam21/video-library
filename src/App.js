@@ -5,6 +5,7 @@ import {
   LoginPage,
   PlaylistPage,
   SingleVideoPage,
+  WatchLaterPage,
 } from "./pages/index";
 import { Navbar, Sidebar } from "./component";
 import { Route, Routes } from "react-router-dom";
@@ -25,6 +26,14 @@ function App() {
             element={
               <RequireAuth>
                 <PlaylistPage />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='/watchlater'
+            element={
+              <RequireAuth>
+                <WatchLaterPage />
               </RequireAuth>
             }
           />
