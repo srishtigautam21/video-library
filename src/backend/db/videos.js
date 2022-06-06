@@ -6,7 +6,6 @@
 export const videos = [
   {
     _id: "ee0SfGSJOTc",
-
     title: "7 Quick & Healthy Breakfast Options",
     description:
       "7 Quick and Healthy Indian Breakfast options for the entire Week.Breakfast is the most important meal of the day. It is that time of the day when our body is need of energy. So, breakfast should be heavy and balanced. However, in todays fast pace life most of us are either not having breakfast properly or eating the same thing everyday. But not anymore. If you too are tired of eating paranthas daily then keep watching this video as I will share with you 7 Healthy breakfast options which can be cooked in less that 5 minutes using minimum ingredients without compromising on taste.",

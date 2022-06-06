@@ -4,10 +4,11 @@ import "./watchLaterPage.css";
 
 const WatchLaterPage = () => {
   const { watchLaterList } = useWatchLater();
+  console.log(watchLaterList);
   return (
     <>
       <div className='watch-later-container'>
-        {watchLaterList.map((videoCard) => (
+        {watchLaterList?.map((videoCard) => (
           <WatchLaterCard key={videoCard._id} videoCard={videoCard} />
         ))}
       </div>

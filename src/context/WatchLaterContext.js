@@ -13,9 +13,11 @@ const WatchLaterProvider = ({ children }) => {
   const [watchLaterList, setWatchLaterList] = useState([]);
 
   const watchLaterHandler = async (video) => {
+    debugger;
     console.log("in watch later context");
     console.log(video);
     const encodedToken = localStorage.getItem("myToken");
+    console.log(video._id);
     // if (encodedToken === null) {
     //   navigate("/login");
     // }
@@ -26,6 +28,7 @@ const WatchLaterProvider = ({ children }) => {
         { video },
         config
       );
+      debugger;
       console.log(response.data.watchlater);
       setWatchLaterList(response.data.watchlater); //(prev) => [...prev, response.data.watchlater]
     } catch (e) {
