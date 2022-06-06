@@ -1,14 +1,16 @@
 import { DeleteIcon } from "../../Assets/allsvg";
 import { useWatchLater } from "../../context";
+import { Link } from "react-router-dom";
 
 const HistoryCard = ({ videoCard }) => {
   const { title, creator, thumbnail, creatorDp, views, _id } = videoCard;
   const { deleteFromHistory } = useWatchLater();
   return (
     <>
-      {/* <Link to={`/video/${_id}`} state={videoCard} className='video-link'> */}
-      <div className=' videocard-container parent-positioning '>
-        <img src={thumbnail} alt={title} />
+      <div className=' videocard-container parent-positioning videocard-dimension'>
+        <Link to={`/video/${_id}`} state={videoCard} className='video-link'>
+          <img src={thumbnail} alt={title} />
+        </Link>
         <div className='inside-container '>
           <div className='video-title'>
             <img className='creator' src={creatorDp} alt={creator} />
@@ -28,7 +30,6 @@ const HistoryCard = ({ videoCard }) => {
           </div>
         </div>
       </div>
-      {/* </Link> */}
     </>
   );
 };

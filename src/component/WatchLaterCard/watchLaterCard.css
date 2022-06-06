@@ -17,15 +17,29 @@
   background-color: var(--COLOR-WHITE);
   box-shadow: 0px 3px 10px var(--BOX-SHADOW-LIGHTER);
   margin-bottom: 3.2rem;
+  cursor: pointer;
 }
-.videocard-container:hover {
+.videocard-dimension {
+  height: 33rem;
+}
+.video-link {
+  position: relative;
+  height: 20rem;
+  width: 35rem;
+}
+/* .videocard-container:hover {
   cursor: pointer;
   border: 2px solid var(--COLOR-PRIMARY);
-}
+} */
 .video-creator {
   padding-left: 4rem;
 }
 .watch-later-card {
   display: flex;
   justify-content: space-between;
+}
+.btn-position {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
 }

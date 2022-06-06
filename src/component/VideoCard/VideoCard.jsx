@@ -10,7 +10,7 @@ const VideoCard = ({ video }) => {
       <Link
         to={`/video/${_id}`}
         state={video}
-        className='video-link'
+        // className='video-link'
         onClick={() => addToHistory(video)}
       >
         <div className=' videocard-container parent-positioning '>

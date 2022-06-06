@@ -3,11 +3,10 @@
   gap: 2rem;
   padding: 2rem;
 }
-.page-title {
-  padding: 2rem;
-  font-size: 2rem;
-  font-weight: 500;
-}
-.video-icon-alignment {
-  padding-top: 2px;
+.empty-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
 }
