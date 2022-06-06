@@ -27,10 +27,7 @@
   height: 20rem;
   width: 35rem;
 }
-/* .videocard-container:hover {
-  cursor: pointer;
-  border: 2px solid var(--COLOR-PRIMARY);
-} */
+
 .video-creator {
   padding-left: 4rem;
 }
