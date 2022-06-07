@@ -24,38 +24,12 @@ function App() {
           <Route path='/explorePage' element={<VideoListingPage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/video/:id' element={<SingleVideoPage />} />
-          <Route
-            path='/playlist'
-            element={
-              <RequireAuth>
-                <PlaylistPage />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path='/watchlater'
-            element={
-              <RequireAuth>
-                <WatchLaterPage />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path='/liked'
-            element={
-              <RequireAuth>
-                <LikedVideosPage />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path='/history'
-            element={
-              <RequireAuth>
-                <HistoryPage />
-              </RequireAuth>
-            }
-          />
+          <Route element={<RequireAuth />}>
+            <Route path='/playlist' element={<PlaylistPage />} />
+            <Route path='/watchlater' element={<WatchLaterPage />} />
+            <Route path='/liked' element={<LikedVideosPage />} />
+            <Route path='/history' element={<HistoryPage />} />
+          </Route>
         </Routes>
       </div>
     </>
