@@ -28,7 +28,7 @@ export const videos = [
   },
   {
     _id: "mK5Zv1Gi67A",
-    title: "7 High Protein Veg BREAKFAST RECIPES",
+    title: "7 Veg BREAKFAST RECIPES",
     creator: "GunjanShouts",
     description:
       "Watch these 7 High Protein delicious Breakfast recipes which will also help in weight loss.These are Easy, Tasty and Healthy that you can even enjoy when you are on your weight loss journey. All the dishes are different from our regular meals and all are pure veg. ",
@@ -50,7 +50,7 @@ export const videos = [
   },
   {
     _id: "7Yo54RiBUx0",
-    title: "These 15 Minute Lunches Will Change Your Life",
+    title: "Easy 15 Minute Lunches Recepies",
     creator: "Pro Home Cooks",
     description:
       "These 15 minute lunch recepies will change your life and you would never gonna turn towards takeOuts. ",

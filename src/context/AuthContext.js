@@ -14,13 +14,6 @@ const AuthProvider = ({ children }) => {
 
   let from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    let videoLibToken = localStorage.getItem("myToken");
-    if (videoLibToken !== null) {
-      setEncodedToken(videoLibToken);
-    }
-  }, []);
-
   const loginHandler = async (e) => {
     e.preventDefault();
     fetchData({
@@ -48,6 +41,13 @@ const AuthProvider = ({ children }) => {
       setEncodedToken(response.encodedToken);
     }
   }, [response]);
+
+  useEffect(() => {
+    let videoLibToken = localStorage.getItem("myToken");
+    if (videoLibToken !== null) {
+      setEncodedToken(videoLibToken);
+    }
+  }, []);
 
   return (
     <AuthContext.Provider

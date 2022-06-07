@@ -1,0 +1,12 @@
+.watch-later-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+.empty-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
