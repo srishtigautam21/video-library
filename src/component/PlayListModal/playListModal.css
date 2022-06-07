@@ -1,0 +1,66 @@
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--COLOR-WHITE);
+  padding: 3rem;
+  z-index: 500;
+}
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--BACKGROUND-MODAL);
+}
+.btn-cross-modal {
+  position: absolute;
+  top: 5px;
+  right: 1rem;
+}
+.btn-cross {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.add-edit-note {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+.border {
+  border: 1.5px solid var(--COLOR-PRIMARY);
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.border-note {
+  border: 1px solid var(--COLOR-BLACK);
+}
+.input-margin {
+  margin: 7px;
+}
+.pd-md {
+  padding: 2rem 0 5px 2rem;
+}
+.sm-pd {
+  padding: 5px;
+}
+.border-note:focus {
+  outline: none;
+}
+.no-border {
+  border: 0;
+}
+.no-border:focus {
+  outline: none;
+}
+.title-input {
+  width: 19vw;
+  max-height: 9vh;
+}
