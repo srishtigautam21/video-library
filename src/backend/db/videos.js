@@ -83,7 +83,7 @@ export const videos = [
   },
   {
     _id: "r-m9pMs8Ya0",
-    title: "6 easy & healthy non deep fried snacks",
+    title: "6 easy & healthy snacks",
     creator: "Hebbars Kitchen",
     description:
       "These non deep fried snacks are easy to make and healthy for your body.",
@@ -94,7 +94,7 @@ export const videos = [
   },
   {
     _id: "o-7X96WS9XE",
-    title: "3 Easy Snacks for the Evening Hunger",
+    title: "3 Easy Snacks for the Evening",
     creator: "The Yoga Institute",
     description:
       "Yoga recommends Mitaahara, which is eating in moderation, and when you are hungry.In this video, we will show some healthy snack recipes that you can eat as your healthy evening snacks.",
@@ -116,7 +116,7 @@ export const videos = [
   },
   {
     _id: "pS7qTxVXQgw",
-    title: "6 Healthy Dinner Ideas For Weight Loss",
+    title: "6 Healthy Dinner Ideas ",
     creator: "TheSeriousfitness",
     description:
       "So to help you stay on your slim-and-trim track, we've gathered 6 healthy dinner ideas for weight loss to incorporate into your diet. These are quick and easy recipes to make and we have included a variety of meaty, vegetarian and vegan recipes.I hope you like all these easy dinner recipes",

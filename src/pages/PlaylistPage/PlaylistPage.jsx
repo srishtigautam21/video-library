@@ -10,7 +10,7 @@ const PlaylistPage = () => {
         <div className='playlist-category'>
           <button
             className='button  button-overlay'
-            onClick={(open) => setOpenModal(!open)}
+            onClick={() => setOpenModal(true)}
           >
             New Playlist
           </button>
@@ -34,10 +34,10 @@ const PlaylistPage = () => {
             {/* ); */}
             {/* })} */}
           </ul>
+          <PlayListModal setOpenModal={setOpenModal} openModal={openModal} />
         </div>
       </div>
-      <button className='button outline-button'>Delete Playlist</button>
-      {openModal && <PlayListModal setOpenModal={setOpenModal} />}
+      {/* <button className='button outline-button'>Delete Playlist</button> */}
     </>
   );
 };

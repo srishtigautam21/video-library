@@ -28,3 +28,14 @@
 .video-creator {
   padding-left: 4rem;
 }
+.card-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.video-margin {
+  margin-left: 1rem;
+  position: absolute;
+  bottom: 6rem;
+  right: 1rem;
+}

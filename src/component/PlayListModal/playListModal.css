@@ -6,6 +6,7 @@
   background-color: var(--COLOR-WHITE);
   padding: 3rem;
   z-index: 500;
+  border-radius: 1rem;
 }
 .modal-background {
   position: fixed;
@@ -14,16 +15,19 @@
   left: 0;
   right: 0;
   background-color: var(--BACKGROUND-MODAL);
+  z-index: 500;
 }
 .btn-cross-modal {
   position: absolute;
-  top: 5px;
-  right: 1rem;
+  top: 1rem;
+  right: 1.8rem;
 }
 .btn-cross {
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  font-weight: 600;
+  color: var(--COLOR-SOCIAL-ICON);
 }
 .add-edit-note {
   display: flex;
@@ -36,11 +40,12 @@
 }
 .input-container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 5px;
+  flex-direction: column;
 }
 .border-note {
-  border: 1px solid var(--COLOR-BLACK);
+  border: 1.4px solid var(--BOX-SHADOW);
 }
 .input-margin {
   margin: 7px;
@@ -49,7 +54,7 @@
   padding: 2rem 0 5px 2rem;
 }
 .sm-pd {
-  padding: 5px;
+  padding: 8px;
 }
 .border-note:focus {
   outline: none;
@@ -61,6 +66,11 @@
   outline: none;
 }
 .title-input {
-  width: 19vw;
+  width: 23vw;
   max-height: 9vh;
+  margin: 1rem 0;
+}
+.input-title {
+  display: flex;
+  flex-direction: column;
 }
