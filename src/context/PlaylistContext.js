@@ -1,12 +1,13 @@
 import { useContext, createContext } from "react";
 import axios from "axios";
 import { useState } from "react";
+// import { useModal } from "../context/ModalContext";
 
 const PlayListContext = createContext({});
 
 const PlayListProvider = ({ children }) => {
   const [playlist, setPlayList] = useState([]);
-
+  // const { setModal } = useModal();
   const addToPlaylist = async (title, description) => {
     console.log("In playlistContext", title, description);
     const encodedToken = localStorage.getItem("myToken");
@@ -14,11 +15,14 @@ const PlayListProvider = ({ children }) => {
     try {
       const result = await axios.post(
         "/api/user/playlists",
-        { title: title, description: description },
+        {
+          playlist: { title: title, description: description },
+        },
         config
       );
       setPlayList([...result.data.playlists]);
-      console.log(result.data.playlists);
+      // setModal({ title: "", desc: "" });
+      // console.log(result.data.playlists);
     } catch (e) {
       console.log(e);
     }

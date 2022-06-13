@@ -90,3 +90,14 @@
 .save-btn:hover {
   background-color: var(--PRIMARY-HOVER);
 }
+.margin-right {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.border {
+  background-color: var(--BOX-SHADOW-LIGHTER);
+  color: var(--BOX-SHADOW-LIGHTER);
+  border-color: var(--BOX-SHADOW-LIGHTER);
+  height: 2px;
+  margin: 1rem 0 5px 0;
+}

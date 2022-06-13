@@ -36,6 +36,10 @@
 .video-margin {
   margin-left: 1rem;
   position: absolute;
-  bottom: 6rem;
+  bottom: 5.8rem;
   right: 1rem;
+}
+.video-margin:hover {
+  background-color: rgb(223, 221, 221);
+  border-radius: 50%;
 }

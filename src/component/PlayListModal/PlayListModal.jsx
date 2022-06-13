@@ -5,7 +5,7 @@ import { usePlayList } from "../../context";
 
 const PlayListModal = ({ setOpenModal, openModal }) => {
   const { modal, setModal } = useModal();
-  const { addToPlaylist } = usePlayList();
+  const { addToPlaylist, playlist } = usePlayList();
 
   // const[playlistObject,setPlayListObject]=useState({
   //   title:"",
@@ -13,7 +13,8 @@ const PlayListModal = ({ setOpenModal, openModal }) => {
   // })
   const playlistHandler = () => {
     addToPlaylist(modal.title.trim(), modal.desc.trim());
-    console.log(modal.title);
+    // console.log(modal.title);
+    setModal({ title: "", desc: "" });
   };
   if (!openModal) return null;
   return ReactDom.createPortal(
@@ -28,6 +29,24 @@ const PlayListModal = ({ setOpenModal, openModal }) => {
           // style={{ backgroundColor: editNote.noteColor }}
           className='add-edit-note '
         >
+          {playlist.length > 0
+            ? playlist.map((obj) => {
+                return (
+                  <div key={obj._id}>
+                    <h3>Add to Playlist</h3>
+                    <label htmlFor='check-box'>
+                      <input
+                        type='checkbox'
+                        id='check-box'
+                        className='margin-right'
+                      />
+                      {obj.title}
+                    </label>
+                    <hr className='border' />
+                  </div>
+                );
+              })
+            : ""}
           {/* border */}
           <div className=' input-container input-margin'>
             {/*  */}
