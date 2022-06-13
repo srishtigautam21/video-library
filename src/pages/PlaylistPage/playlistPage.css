@@ -20,4 +20,5 @@
   background-color: var(--ALERT-SUCCESS-COLOR);
   min-width: 10rem;
   height: 3rem;
+  color: black;
 }

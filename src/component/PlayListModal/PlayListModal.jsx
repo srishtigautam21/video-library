@@ -1,9 +1,20 @@
 import "./playListModal.css";
 import ReactDom from "react-dom";
-import { useState } from "react";
+import { useModal } from "../../context";
+import { usePlayList } from "../../context";
 
 const PlayListModal = ({ setOpenModal, openModal }) => {
-  const [modal, setModal] = useState({ title: "", desc: "" });
+  const { modal, setModal } = useModal();
+  const { addToPlaylist } = usePlayList();
+
+  // const[playlistObject,setPlayListObject]=useState({
+  //   title:"",
+  //   description:"",
+  // })
+  const playlistHandler = () => {
+    addToPlaylist(modal.title.trim(), modal.desc.trim());
+    console.log(modal.title);
+  };
   if (!openModal) return null;
   return ReactDom.createPortal(
     <div className='modal-background'>
@@ -49,6 +60,15 @@ const PlayListModal = ({ setOpenModal, openModal }) => {
             </label>
           </div>
         </div>
+        <button
+          className='no-border save-btn'
+          onClick={() => {
+            playlistHandler();
+            setOpenModal(false);
+          }}
+        >
+          Create Playlist
+        </button>
       </div>
     </div>,
     document.getElementById("portal")

@@ -7,6 +7,7 @@
   padding: 3rem;
   z-index: 500;
   border-radius: 1rem;
+  min-height: 27rem;
 }
 .modal-background {
   position: fixed;
@@ -73,4 +74,19 @@
 .input-title {
   display: flex;
   flex-direction: column;
+}
+.save-btn {
+  width: 48%;
+  padding: 7px;
+  background-color: var(--COLOR-PRIMARY);
+  font-size: 1.6rem;
+  margin: 9px;
+  border-radius: 0rem;
+  position: absolute;
+  right: 23%;
+  bottom: 1px;
+  color: var(--COLOR-WHITE);
+}
+.save-btn:hover {
+  background-color: var(--PRIMARY-HOVER);
 }

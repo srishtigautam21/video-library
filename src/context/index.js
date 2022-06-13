@@ -4,3 +4,4 @@ export {
   WatchLaterProvider,
 } from "../context/WatchLaterContext";
 export { useModal, ModalProvider } from "../context/ModalContext";
+export { usePlayList, PlayListProvider } from "../context/PlaylistContext";
