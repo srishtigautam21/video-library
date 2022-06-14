@@ -3,14 +3,24 @@ import ReactDom from "react-dom";
 import { useModal } from "../../context";
 import { usePlayList } from "../../context";
 
-const PlayListModal = ({ setOpenModal, openModal }) => {
+const PlayListModal = ({ setOpenModal, openModal, video }) => {
   const { modal, setModal } = useModal();
-  const { addToPlaylist, playlist } = usePlayList();
+  const { addToPlaylist, playlist, addVideoToPlaylist, removeFromPlaylist } =
+    usePlayList();
 
-  // const[playlistObject,setPlayListObject]=useState({
-  //   title:"",
-  //   description:"",
-  // })
+  const videoPresesntOrNot = (obj, video) => {
+    return obj.videos.find((vid) => vid._id === video._id);
+  };
+
+  const addVideoToPlaylistHandler = (obj, video) => {
+    console.log(obj);
+    if (videoPresesntOrNot(obj, video)) {
+      removeFromPlaylist(obj._id, video);
+    } else {
+      addVideoToPlaylist(obj._id, video);
+    }
+  };
+
   const playlistHandler = () => {
     addToPlaylist(modal.title.trim(), modal.desc.trim());
     // console.log(modal.title);
@@ -29,25 +39,36 @@ const PlayListModal = ({ setOpenModal, openModal }) => {
           // style={{ backgroundColor: editNote.noteColor }}
           className='add-edit-note '
         >
-          {playlist.length > 0
-            ? playlist.map((obj) => {
+          {playlist.length > 0 ? (
+            <div className='border'>
+              <h3>Add to Playlist</h3>
+              {playlist.map((obj) => {
                 return (
                   <div key={obj._id}>
-                    <h3>Add to Playlist</h3>
-                    <label htmlFor='check-box'>
+                    {/* <h3>Add to Playlist</h3> */}
+                    <label>
+                      {/* htmlFor='check-box' */}
                       <input
                         type='checkbox'
-                        id='check-box'
+                        // id='check-box'
                         className='margin-right'
+                        checked={obj.videos.find((v) => v._id === video._id)}
+                        onChange={() => {
+                          addVideoToPlaylistHandler(obj, video);
+                          // setOpenModal(false);
+                        }}
                       />
                       {obj.title}
                     </label>
-                    <hr className='border' />
+                    {/* <hr className='border' /> */}
+                    {/* <div className='border' /> */}
                   </div>
                 );
-              })
-            : ""}
-          {/* border */}
+              })}
+            </div>
+          ) : (
+            ""
+          )}
           <div className=' input-container input-margin'>
             {/*  */}
             <h3>New Playlist</h3>

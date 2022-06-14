@@ -5,3 +5,4 @@ export { WatchLaterCard } from "./WatchLaterCard/WatchLaterCard";
 export { LikedVideoCard } from "./LikedVideoCard/LikedVideoCard";
 export { HistoryCard } from "./HistoryCard/HistoryCard";
 export { PlayListModal } from "./PlayListModal/PlayListModal";
+export { PlayListCard } from "./PlayListCard/PlayListCard";

@@ -2,11 +2,11 @@ import "./playlistPage.css";
 import { useState } from "react";
 import { PlayListModal } from "../../component";
 import { usePlayList } from "../../context";
-import { VideoCard } from "../../component";
+import { PlayListCard } from "../../component";
 
 const PlaylistPage = () => {
   const [openModal, setOpenModal] = useState(false);
-  const { playlist } = usePlayList();
+  const { playlist, removePlaylist } = usePlayList();
 
   const [selectedPlaylist, setSelectedPlaylist] = useState(
     playlist.length > 0 ? playlist[0].title : ""
@@ -61,7 +61,7 @@ const PlaylistPage = () => {
               {selectedPlaylist && (
                 <button
                   className='button outline-button'
-                  // onClick={() => removePlaylist(selectedPlaylist)}
+                  onClick={() => removePlaylist(selectedPlaylist)}
                 >
                   Delete playlist
                 </button>
@@ -69,7 +69,11 @@ const PlaylistPage = () => {
             </div>
             <div className='playlist-video-content'>
               {getSelectedPlaylistVideos(playlist).map((video) => (
-                <VideoCard video={video} playlistId={selectedPlaylist} />
+                <PlayListCard
+                  video={video}
+                  playlistId={selectedPlaylist}
+                  key={video._id}
+                />
               ))}
               {getSelectedPlaylistVideos(playlist).length === 0 && (
                 <div className='playlist-video-container font-normal'>
