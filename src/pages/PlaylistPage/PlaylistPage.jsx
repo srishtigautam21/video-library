@@ -1,5 +1,5 @@
 import "./playlistPage.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PlayListModal } from "../../component";
 import { usePlayList } from "../../context";
 import { PlayListCard } from "../../component";
@@ -21,6 +21,20 @@ const PlaylistPage = () => {
       playlist.find((playlis) => playlis._id === selectedPlaylist)?.videos ?? []
     );
   };
+
+  useEffect(() => {
+    if (playlist.length > 0 && selectedPlaylist === "") {
+      setSelectedPlaylist(playlist[0]._id);
+    } else if (
+      playlist.length > 0 &&
+      !playlist.find((list) => list._id === selectedPlaylist)
+    ) {
+      setSelectedPlaylist(playlist[0]._id);
+    } else if (playlist.length === 0) {
+      setSelectedPlaylist("");
+    }
+    // eslint-disable-next-line
+  }, [playlist]);
 
   return (
     <>

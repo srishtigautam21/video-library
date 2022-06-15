@@ -8,17 +8,20 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
   const { addToPlaylist, playlist, addVideoToPlaylist, removeFromPlaylist } =
     usePlayList();
 
-  const videoPresesntOrNot = (obj, video) => {
-    return obj.videos.find((vid) => vid._id === video._id);
-  };
+  // const videoPresesntOrNot = (obj, video) => {
+  //   return obj.videos.find((vid) => vid._id === video._id);
+  // };
 
-  const addVideoToPlaylistHandler = (obj, video) => {
-    console.log(obj);
-    if (videoPresesntOrNot(obj, video)) {
-      removeFromPlaylist(obj._id, video);
-    } else {
-      addVideoToPlaylist(obj._id, video);
-    }
+  const addVideoToPlaylistHandler = (e, obj, video) => {
+    // if (videoPresesntOrNot(obj, video)) {
+    //   removeFromPlaylist(obj._id, video);
+    // } else {
+    //   addVideoToPlaylist(obj._id, video);
+    // }
+    // console.log(e.target.checked);
+    !e.target.checked
+      ? removeFromPlaylist(obj._id, video)
+      : addVideoToPlaylist(obj._id, video);
   };
 
   const playlistHandler = () => {
@@ -43,20 +46,21 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
             <div className='border'>
               <h3>Add to Playlist</h3>
               {playlist.map((obj) => {
+                // console.log(obj);
                 return (
                   <div key={obj._id}>
                     {/* <h3>Add to Playlist</h3> */}
-                    <label>
-                      {/* htmlFor='check-box' */}
+                    <label htmlFor={obj._id} className='checkbox-input'>
                       <input
                         type='checkbox'
-                        // id='check-box'
-                        className='margin-right'
-                        checked={obj.videos.find((v) => v._id === video._id)}
-                        onChange={() => {
-                          addVideoToPlaylistHandler(obj, video);
+                        id={obj._id}
+                        className='margin-right checkbox-input'
+                        checked={obj.videos.some((v) => v._id === video._id)}
+                        onChange={(e) => {
+                          addVideoToPlaylistHandler(e, obj, video);
                           // setOpenModal(false);
                         }}
+                        // checked={obj.videos.find((v) => v._id === video._id)}
                       />
                       {obj.title}
                     </label>

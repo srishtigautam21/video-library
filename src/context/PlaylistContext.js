@@ -1,13 +1,25 @@
 import { useContext, createContext } from "react";
 import axios from "axios";
-import { useState } from "react";
-// import { useModal } from "../context/ModalContext";
+import { useState, useEffect } from "react";
+import { useAuth } from "../context";
 
 const PlayListContext = createContext({});
 
 const PlayListProvider = ({ children }) => {
   const [playlist, setPlayList] = useState([]);
-  // const { setModal } = useModal();
+  const { encodedToken } = useAuth();
+
+  const getPlaylist = async () => {
+    const encodedToken = localStorage.getItem("myToken");
+    const config = { headers: { authorization: encodedToken } };
+    try {
+      const result = await axios.get("/api/user/playlists", config);
+      setPlayList([...result.data.playlists]);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const addToPlaylist = async (title, description) => {
     const encodedToken = localStorage.getItem("myToken");
     const config = { headers: { authorization: encodedToken } };
@@ -49,6 +61,12 @@ const PlayListProvider = ({ children }) => {
         },
         config
       );
+      // const updatedPlaylists = playlist.some((play) => play._id === playlistId)
+      //   ? playlist.map((play) =>
+      //       play._id === playlistId ? result.data.playlist : play
+      //     )
+      //   : playlist.concat(result.data.playlist);
+      // setPlayList(updatedPlaylists);
       setPlayList((s) => [
         ...s.map((playlist) =>
           playlist._id === result.data.playlist._id
@@ -56,11 +74,13 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
+
+      // console.log(result.data);
     } catch (e) {
       console.log(e);
     }
   };
-
+  // console.log("playlist", playlist);
   const removeFromPlaylist = async (playlistId, video) => {
     const encodedToken = localStorage.getItem("myToken");
     const config = { headers: { authorization: encodedToken } };
@@ -76,10 +96,18 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
+      // console.log(result.data.playlist);
     } catch (e) {
       console.log(e);
     }
   };
+
+  useEffect(() => {
+    if (encodedToken !== null) {
+      getPlaylist();
+    }
+  }, [encodedToken]);
+
   return (
     <PlayListContext.Provider
       value={{
