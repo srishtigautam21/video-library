@@ -1,16 +1,29 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 
 import axios from "axios";
-
+import { useAuth } from "../context";
 import { useNavigate } from "react-router-dom";
 
 const WatchLaterContext = createContext({});
 
 const WatchLaterProvider = ({ children }) => {
   const navigate = useNavigate();
+  const { encodedToken } = useAuth();
   const [likedVideoList, setLikedVideoList] = useState([]);
   const [watchLaterList, setWatchLaterList] = useState([]);
   const [historyList, setHistoryList] = useState([]);
+  const [videos, setVideos] = useState([]);
+
+  const getVideo = async () => {
+    const encodedToken = localStorage.getItem("myToken");
+    const config = { headers: { authorization: encodedToken } };
+    try {
+      const result = await axios.get("/api/videos", config);
+      setVideos([...result.data.videos]);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const addToWatchLater = async (video) => {
     const encodedToken = localStorage.getItem("myToken");
@@ -89,6 +102,13 @@ const WatchLaterProvider = ({ children }) => {
       console.error(e);
     }
   };
+
+  useEffect(() => {
+    if (encodedToken !== null) {
+      getVideo();
+    }
+  }, [encodedToken]);
+
   return (
     <WatchLaterContext.Provider
       value={{
@@ -102,6 +122,7 @@ const WatchLaterProvider = ({ children }) => {
         setHistoryList,
         historyList,
         deleteFromHistory,
+        videos,
       }}
     >
       {children}
