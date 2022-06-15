@@ -94,6 +94,17 @@ function HistoryIcon(props) {
     </svg>
   );
 }
+
+function CardThreeDots(props) {
+  return (
+    <svg width='1em' height='1em' viewBox='0 0 256 256' {...props}>
+      <path
+        fill='currentColor'
+        d='M144 192a16 16 0 1 1-16-16a16 16 0 0 1 16 16ZM128 80a16 16 0 1 0-16-16a16 16 0 0 0 16 16Zm0 32a16 16 0 1 0 16 16a16 16 0 0 0-16-16Z'
+      ></path>
+    </svg>
+  );
+}
 export {
   UserIcon,
   HomeIcon,
@@ -104,4 +115,5 @@ export {
   DeleteIcon,
   LikeIconFilled,
   HistoryIcon,
+  CardThreeDots,
 };

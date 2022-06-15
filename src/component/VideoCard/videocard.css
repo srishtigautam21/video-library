@@ -28,3 +28,18 @@
 .video-creator {
   padding-left: 4rem;
 }
+.card-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.video-margin {
+  margin-left: 1rem;
+  position: absolute;
+  bottom: 5.8rem;
+  right: 1rem;
+}
+.video-margin:hover {
+  background-color: rgb(223, 221, 221);
+  border-radius: 50%;
+}

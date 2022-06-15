@@ -6,7 +6,7 @@ import "./likedVideoPage.css";
 
 const LikedVideosPage = () => {
   const { likedVideoList } = useWatchLater();
-  // console.log(likedVideoList);
+
   return (
     <>
       {likedVideoList.length === 0 ? (

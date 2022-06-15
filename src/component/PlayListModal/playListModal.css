@@ -1,0 +1,104 @@
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--COLOR-WHITE);
+  padding: 3rem;
+  z-index: 500;
+  border-radius: 1rem;
+  min-height: 27rem;
+}
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--BACKGROUND-MODAL);
+  z-index: 500;
+}
+.btn-cross-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.8rem;
+}
+.btn-cross {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--COLOR-SOCIAL-ICON);
+}
+.add-edit-note {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+.border {
+  border: 1.5px solid var(--COLOR-PRIMARY);
+}
+.input-container {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.border-note {
+  border: 1.4px solid var(--BOX-SHADOW);
+}
+.input-margin {
+  margin: 7px;
+}
+.pd-md {
+  padding: 2rem 0 5px 2rem;
+}
+.sm-pd {
+  padding: 8px;
+}
+.border-note:focus {
+  outline: none;
+}
+.no-border {
+  border: 0;
+}
+.no-border:focus {
+  outline: none;
+}
+.title-input {
+  width: 23vw;
+  max-height: 9vh;
+  margin: 1rem 0;
+}
+.input-title {
+  display: flex;
+  flex-direction: column;
+}
+.save-btn {
+  width: 48%;
+  padding: 7px;
+  background-color: var(--COLOR-PRIMARY);
+  font-size: 1.6rem;
+  margin: 9px;
+  border-radius: 0rem;
+  position: absolute;
+  right: 23%;
+  bottom: 1px;
+  color: var(--COLOR-WHITE);
+}
+.save-btn:hover {
+  background-color: var(--PRIMARY-HOVER);
+}
+.margin-right {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.border {
+  margin: 1rem 0 5px 0;
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--BOX-SHADOW-LIGHTER);
+}
+.checkbox-input {
+  cursor: pointer;
+}

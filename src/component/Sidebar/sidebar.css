@@ -16,5 +16,5 @@
   color: var(--COLOR-PRIMARY);
 }
 .inactive-link:hover {
-  color: var(--INACTIVE-LINK);
+  background-color: var(--INACTIVE-LINK);
 }
