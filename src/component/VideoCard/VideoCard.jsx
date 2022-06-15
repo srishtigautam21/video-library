@@ -11,11 +11,6 @@ const VideoCard = ({ video, PlaylistId = false }) => {
   const [openModal, setOpenModal] = useState(false);
   return (
     <>
-      {/* <Link
-        to={`/video/${_id}`}
-        state={video}
-        onClick={() => addToHistory(video)}
-      > */}
       <div className=' videocard-container parent-positioning '>
         <Link
           to={`/video/${_id}`}
@@ -27,12 +22,7 @@ const VideoCard = ({ video, PlaylistId = false }) => {
         <div className='inside-container '>
           <div className='video-title'>
             <img className='creator' src={creatorDp} alt={creator} />
-            {/* <div className='card-icon'>
-                <div> */}
             <h4>{title}</h4>
-            {/* </div>
-                <CardThreeDots className='video-margin' />
-              </div> */}
           </div>
           <div className='video-creator'>
             <span className='card-content'>{creator}</span>
@@ -44,7 +34,6 @@ const VideoCard = ({ video, PlaylistId = false }) => {
           />
         </div>
       </div>
-      {/* </Link> */}
       <PlayListModal
         setOpenModal={setOpenModal}
         openModal={openModal}

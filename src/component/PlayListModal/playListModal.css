@@ -41,7 +41,6 @@
 }
 .input-container {
   display: flex;
-  /* justify-content: space-between; */
   gap: 5px;
   flex-direction: column;
 }

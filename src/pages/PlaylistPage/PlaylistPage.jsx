@@ -51,7 +51,6 @@ const PlaylistPage = () => {
               return (
                 <li key={obj._id} className='list-item '>
                   <button
-                    // style={obj._id === selectedPlaylist ? styleObj : {}}
                     className='button button-sec'
                     onClick={() => switchPlaylist(obj._id)}
                   >
@@ -98,7 +97,6 @@ const PlaylistPage = () => {
           </div>
         )}
       </div>
-      {/* <button className='button outline-button'>Delete Playlist</button> */}
     </>
   );
 };

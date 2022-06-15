@@ -61,6 +61,7 @@ const PlayListProvider = ({ children }) => {
         },
         config
       );
+      //Future TODO
       // const updatedPlaylists = playlist.some((play) => play._id === playlistId)
       //   ? playlist.map((play) =>
       //       play._id === playlistId ? result.data.playlist : play
@@ -74,13 +75,11 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
-
-      // console.log(result.data);
     } catch (e) {
       console.log(e);
     }
   };
-  // console.log("playlist", playlist);
+
   const removeFromPlaylist = async (playlistId, video) => {
     const encodedToken = localStorage.getItem("myToken");
     const config = { headers: { authorization: encodedToken } };
@@ -96,7 +95,6 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
-      // console.log(result.data.playlist);
     } catch (e) {
       console.log(e);
     }

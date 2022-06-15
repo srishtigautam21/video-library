@@ -8,17 +8,7 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
   const { addToPlaylist, playlist, addVideoToPlaylist, removeFromPlaylist } =
     usePlayList();
 
-  // const videoPresesntOrNot = (obj, video) => {
-  //   return obj.videos.find((vid) => vid._id === video._id);
-  // };
-
   const addVideoToPlaylistHandler = (e, obj, video) => {
-    // if (videoPresesntOrNot(obj, video)) {
-    //   removeFromPlaylist(obj._id, video);
-    // } else {
-    //   addVideoToPlaylist(obj._id, video);
-    // }
-    // console.log(e.target.checked);
     !e.target.checked
       ? removeFromPlaylist(obj._id, video)
       : addVideoToPlaylist(obj._id, video);
@@ -26,7 +16,6 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
 
   const playlistHandler = () => {
     addToPlaylist(modal.title.trim(), modal.desc.trim());
-    // console.log(modal.title);
     setModal({ title: "", desc: "" });
   };
   if (!openModal) return null;
@@ -38,18 +27,13 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
             X
           </button>
         </div>
-        <div
-          // style={{ backgroundColor: editNote.noteColor }}
-          className='add-edit-note '
-        >
+        <div className='add-edit-note '>
           {playlist.length > 0 ? (
             <div className='border'>
               <h3>Add to Playlist</h3>
               {playlist.map((obj) => {
-                // console.log(obj);
                 return (
                   <div key={obj._id}>
-                    {/* <h3>Add to Playlist</h3> */}
                     <label htmlFor={obj._id} className='checkbox-input'>
                       <input
                         type='checkbox'
@@ -58,14 +42,10 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
                         checked={obj.videos.some((v) => v._id === video._id)}
                         onChange={(e) => {
                           addVideoToPlaylistHandler(e, obj, video);
-                          // setOpenModal(false);
                         }}
-                        // checked={obj.videos.find((v) => v._id === video._id)}
                       />
                       {obj.title}
                     </label>
-                    {/* <hr className='border' /> */}
-                    {/* <div className='border' /> */}
                   </div>
                 );
               })}
@@ -74,7 +54,6 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
             ""
           )}
           <div className=' input-container input-margin'>
-            {/*  */}
             <h3>New Playlist</h3>
             <label htmlFor='input-title' className='input-title'>
               <div>Title:</div>
