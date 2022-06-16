@@ -1,9 +1,11 @@
 import "./loginPage.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 const LoginPage = () => {
   const { loginHandler, setLoginUser, loginUser } = useAuth();
+  useDocumentTitle("Login Page");
   return (
     <div className='login-signup-page height-100'>
       <form className='input-form login'>

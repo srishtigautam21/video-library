@@ -1,10 +1,11 @@
 import { VideoCard } from "../../component";
 import { VideoFilter } from "../../component";
 import { useCategory } from "../../context";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 const VideoListingPage = () => {
   const { category, filterState, setSelectedCategory } = useCategory();
-
+  useDocumentTitle("Explore Page");
   const tempCategory = ["All", ...category];
   return (
     <>
