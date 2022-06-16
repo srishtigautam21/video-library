@@ -8,6 +8,7 @@ import {
   WatchLaterPage,
   LikedVideosPage,
   HistoryPage,
+  Page404,
 } from "./pages/index";
 import { Navbar, Sidebar } from "./component";
 import { Route, Routes } from "react-router-dom";
@@ -26,6 +27,7 @@ function App() {
           <Route path='/explorePage' element={<VideoListingPage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/video/:id' element={<SingleVideoPage />} />
+          <Route path='*' element={<Page404 />} />
           <Route
             path='/playlist'
             element={
@@ -58,13 +60,6 @@ function App() {
               </RequireAuth>
             }
           />
-
-          {/* <Route element={<RequireAuth />}> */}
-          {/* <Route path='/playlist' element={<PlaylistPage />} /> */}
-          {/* <Route path='/watchlater' element={<WatchLaterPage />} /> */}
-          {/* <Route path='/liked' element={<LikedVideosPage />} />
-            <Route path='/history' element={<HistoryPage />} /> */}
-          {/* </Route> */}
         </Routes>
         <ToastContainer />
       </div>
