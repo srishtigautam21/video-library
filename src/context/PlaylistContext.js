@@ -2,6 +2,13 @@ import { useContext, createContext } from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useAuth } from "../context";
+import {
+  playlistToast,
+  addVideoToPlaylistoast,
+  deletePlaylist,
+  // eslint-disable-next-line
+  removeFromPlaylist,
+} from "../customHooks/Toastify";
 
 const PlayListContext = createContext({});
 
@@ -32,6 +39,7 @@ const PlayListProvider = ({ children }) => {
         config
       );
       setPlayList([...result.data.playlists]);
+      playlistToast("Playlist added successfully");
     } catch (e) {
       console.log(e);
     }
@@ -45,6 +53,7 @@ const PlayListProvider = ({ children }) => {
         config
       );
       setPlayList([...result.data.playlists]);
+      deletePlaylist("Playlist deleted");
     } catch (e) {
       console.log(e);
     }
@@ -75,6 +84,7 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
+      addVideoToPlaylistoast("Added to playlist");
     } catch (e) {
       console.log(e);
     }
@@ -95,6 +105,7 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
+      removeFromPlaylist("Removed from playlist");
     } catch (e) {
       console.log(e);
     }

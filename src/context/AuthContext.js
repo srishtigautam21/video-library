@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAxios } from "../customHooks/useAxios";
+import { loginLogoutToast } from "../customHooks/Toastify";
 
 const AuthContext = createContext({});
 const AuthProvider = ({ children }) => {
@@ -24,6 +25,7 @@ const AuthProvider = ({ children }) => {
     setLoginUser({ email: "", password: "" });
     navigate(from, { replace: true });
     setIsUserLoggedIn(true);
+    loginLogoutToast("Login successful");
   };
 
   const logOut = () => {
@@ -31,6 +33,7 @@ const AuthProvider = ({ children }) => {
     setEncodedToken(null);
     setIsUserLoggedIn(false);
     setUser({});
+    loginLogoutToast("Logged out");
   };
 
   useEffect(() => {

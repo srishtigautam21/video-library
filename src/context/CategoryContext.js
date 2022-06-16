@@ -14,14 +14,11 @@ const CategoryProvider = ({ children }) => {
 
   const filterState = () => {
     let filterVideos = [...videos];
-    // if (category) {
+
     if (selectedCategory === "All") return filterVideos;
     return (filterVideos = filterVideos.filter(
       (video) => video.category === selectedCategory
     ));
-    // }
-    // console.log(filterVideos);
-    // return filterVideos;
   };
 
   const getCategory = async () => {

@@ -1,9 +1,14 @@
 import { useContext, createContext, useState, useEffect } from "react";
-
 import axios from "axios";
 import { useAuth } from "../context";
 import { useNavigate } from "react-router-dom";
-
+import {
+  addToWatchLaterToast,
+  likedVideoToast,
+  removeFromWatchLater,
+  unlikeVideoToast,
+  removeFromHistory,
+} from "../customHooks/Toastify";
 const WatchLaterContext = createContext({});
 
 const WatchLaterProvider = ({ children }) => {
@@ -36,8 +41,8 @@ const WatchLaterProvider = ({ children }) => {
       const {
         data: { watchlater },
       } = await axios.post("/api/user/watchlater", { video }, config);
-
       setWatchLaterList(watchlater);
+      addToWatchLaterToast("Added to watchlater");
     } catch (e) {
       console.error(e);
     }
@@ -51,6 +56,7 @@ const WatchLaterProvider = ({ children }) => {
         config
       );
       setWatchLaterList(response.data.watchlater);
+      removeFromWatchLater("Removed from watchlater");
     } catch (e) {
       console.error(e);
     }
@@ -62,6 +68,7 @@ const WatchLaterProvider = ({ children }) => {
     try {
       const response = await axios.post("/api/user/likes", { video }, config);
       setLikedVideoList(response.data.likes);
+      likedVideoToast("Liked Video");
     } catch (e) {
       console.error(e);
     }
@@ -73,6 +80,7 @@ const WatchLaterProvider = ({ children }) => {
     try {
       const response = await axios.delete(`/api/user/likes/${videoId}`, config);
       setLikedVideoList(response.data.likes);
+      unlikeVideoToast("Unliked Video");
     } catch (e) {
       console.error(e);
     }
@@ -98,6 +106,7 @@ const WatchLaterProvider = ({ children }) => {
         config
       );
       setHistoryList(response.data.history);
+      removeFromHistory("Removed from history");
     } catch (e) {
       console.error(e);
     }

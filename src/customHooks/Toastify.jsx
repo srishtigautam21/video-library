@@ -1,9 +1,9 @@
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const loginToast = (text) => {
+const loginLogoutToast = (text) => {
   toast.success(text, {
-    position: "top-right",
+    position: "top-center",
     autoClose: 1500,
     closeOnClick: true,
   });
@@ -11,27 +11,27 @@ const loginToast = (text) => {
 
 const addToWatchLaterToast = (text) => {
   toast.success(text, {
-    position: "top-right",
+    position: "top-center",
     autoClose: 1500,
     closeOnClick: true,
   });
 };
 const playlistToast = (text) => {
   toast.success(text, {
-    position: "top-right",
+    position: "top-center",
     autoClose: 1500,
     hideProgressBar: false,
   });
 };
 const likedVideoToast = (text) => {
   toast.success(text, {
-    position: "top-right",
+    position: "top-center",
     autoClose: 1500,
   });
 };
 const addVideoToPlaylistoast = (text) => {
   toast.success(text, {
-    position: "top-right",
+    position: "top-center",
     autoClose: 1500,
     hideProgressBar: false,
   });
@@ -39,24 +39,52 @@ const addVideoToPlaylistoast = (text) => {
 
 const errorToast = (text) => {
   toast.error(text, {
-    position: "top-right",
+    position: "top-center",
     autoClose: 1500,
     hideProgressBar: false,
   });
 };
-const orderSuccessToast = (text) => {
-  toast.success(text, {
-    position: "top-right",
+const removeFromWatchLater = (text) => {
+  toast.warn(text, {
+    position: "top-center",
+    autoClose: 1500,
+  });
+};
+const unlikeVideoToast = (text) => {
+  toast.warn(text, {
+    position: "top-center",
+    autoClose: 1500,
+  });
+};
+const deletePlaylist = (text) => {
+  toast.warn(text, {
+    position: "top-center",
+    autoClose: 1500,
+  });
+};
+const removeFromPlaylist = (text) => {
+  toast.warn(text, {
+    position: "top-center",
+    autoClose: 1500,
+  });
+};
+const removeFromHistory = (text) => {
+  toast.warn(text, {
+    position: "top-center",
     autoClose: 1500,
   });
 };
 
 export {
-  loginToast,
+  loginLogoutToast,
   addToWatchLaterToast,
   playlistToast,
   likedVideoToast,
   addVideoToPlaylistoast,
   errorToast,
-  orderSuccessToast,
+  removeFromWatchLater,
+  unlikeVideoToast,
+  deletePlaylist,
+  removeFromPlaylist,
+  removeFromHistory,
 };
