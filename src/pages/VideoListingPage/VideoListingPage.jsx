@@ -1,4 +1,3 @@
-// import { videos } from "../../backend/db/videos";
 import { VideoCard } from "../../component";
 import { VideoFilter } from "../../component";
 import { useCategory } from "../../context";

@@ -1,14 +1,15 @@
 import "./videocard.css";
 import { Link } from "react-router-dom";
-import { useWatchLater } from "../../context";
+import { useWatchLater, useModal } from "../../context";
 import { PlaylistIcon } from "../../Assets/allsvg";
 import { PlayListModal } from "../../component";
-import { useState } from "react";
+// import { useState } from "react";
 
-const VideoCard = ({ video, PlaylistId = false }) => {
+const VideoCard = ({ video }) => {
   const { addToHistory } = useWatchLater();
+  const { openModal, setOpenModal } = useModal();
   const { title, creator, thumbnail, creatorDp, views, _id } = video;
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
   return (
     <>
       <div className=' videocard-container parent-positioning '>
