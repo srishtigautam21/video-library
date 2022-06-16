@@ -2,6 +2,14 @@ import { useContext, createContext } from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useAuth } from "../context";
+import {
+  playlistToast,
+  addVideoToPlaylistoast,
+  deletePlaylist,
+  errorToast,
+  // eslint-disable-next-line
+  removeFromPlaylist,
+} from "../customHooks/Toastify";
 
 const PlayListContext = createContext({});
 
@@ -16,7 +24,7 @@ const PlayListProvider = ({ children }) => {
       const result = await axios.get("/api/user/playlists", config);
       setPlayList([...result.data.playlists]);
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -32,8 +40,9 @@ const PlayListProvider = ({ children }) => {
         config
       );
       setPlayList([...result.data.playlists]);
+      playlistToast("Playlist added successfully");
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
   const removePlaylist = async (playlistId) => {
@@ -45,8 +54,9 @@ const PlayListProvider = ({ children }) => {
         config
       );
       setPlayList([...result.data.playlists]);
+      deletePlaylist("Playlist deleted");
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -75,8 +85,9 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
+      addVideoToPlaylistoast("Added to playlist");
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -95,8 +106,9 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
+      removeFromPlaylist("Removed from playlist");
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 

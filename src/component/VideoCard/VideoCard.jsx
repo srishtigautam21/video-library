@@ -5,7 +5,7 @@ import { PlaylistIcon } from "../../Assets/allsvg";
 import { PlayListModal } from "../../component";
 import { useState } from "react";
 
-const VideoCard = ({ video, PlaylistId = false }) => {
+const VideoCard = ({ video }) => {
   const { addToHistory } = useWatchLater();
   const { title, creator, thumbnail, creatorDp, views, _id } = video;
   const [openModal, setOpenModal] = useState(false);

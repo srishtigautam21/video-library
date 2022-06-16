@@ -1,7 +1,8 @@
 import { useParams, useLocation } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./singleVideoPage.css";
-import { useWatchLater } from "../../context/WatchLaterContext";
+import { useWatchLater, useModal } from "../../context";
+import { PlayListModal } from "../../component";
 import {
   LikeIcon,
   PlaylistIcon,
@@ -11,6 +12,7 @@ import {
 
 const SingleVideoPage = () => {
   const { id } = useParams();
+  const { openModal, setOpenModal } = useModal();
   const {
     addToWatchLater,
     watchLaterList,
@@ -93,7 +95,10 @@ const SingleVideoPage = () => {
                   )}
                 </div>
                 <div className='video-item'>
-                  <button className='video-btn'>
+                  <button
+                    className='video-btn'
+                    onClick={() => setOpenModal(true)}
+                  >
                     <span>
                       <PlaylistIcon className='incr-font' />
                     </span>
@@ -101,6 +106,11 @@ const SingleVideoPage = () => {
                   </button>
                 </div>
               </div>
+              <PlayListModal
+                setOpenModal={setOpenModal}
+                openModal={openModal}
+                video={video}
+              />
             </div>
             <div className='video-info'>
               <div className='video-creator-name'>

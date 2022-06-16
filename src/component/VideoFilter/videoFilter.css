@@ -1,0 +1,18 @@
+.video-filters {
+  margin: 2rem 0;
+  display: flex;
+}
+.filter-buttons {
+  margin-right: 2rem;
+  padding: 7px;
+  border: 1.5px solid var(--COLOR-PRIMARY);
+  border-radius: 1rem;
+  background-color: transparent;
+}
+.filter-buttons:hover {
+  background-color: var(--darkerofseconadary);
+  cursor: pointer;
+}
+.filter-active {
+  background-color: var(--darkerofseconadary);
+}

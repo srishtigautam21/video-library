@@ -12,6 +12,7 @@ import {
 import { Navbar, Sidebar } from "./component";
 import { Route, Routes } from "react-router-dom";
 import { RequireAuth } from "./customHooks/RequireAuth";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <div className='home-page grid-container'>
         <Navbar />
         <Sidebar />
+
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/explorePage' element={<VideoListingPage />} />
@@ -64,6 +66,7 @@ function App() {
             <Route path='/history' element={<HistoryPage />} /> */}
           {/* </Route> */}
         </Routes>
+        <ToastContainer />
       </div>
     </>
   );
