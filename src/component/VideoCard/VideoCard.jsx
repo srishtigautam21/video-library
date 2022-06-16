@@ -7,7 +7,6 @@ import { useState } from "react";
 
 const VideoCard = ({ video }) => {
   const { addToHistory } = useWatchLater();
-  // const { openModal, setOpenModal } = useModal();
   const { title, creator, thumbnail, creatorDp, views, _id } = video;
   const [openModal, setOpenModal] = useState(false);
   return (

@@ -8,6 +8,7 @@ import {
   removeFromWatchLater,
   unlikeVideoToast,
   removeFromHistory,
+  errorToast,
 } from "../customHooks/Toastify";
 const WatchLaterContext = createContext({});
 
@@ -26,7 +27,7 @@ const WatchLaterProvider = ({ children }) => {
       const result = await axios.get("/api/videos", config);
       setVideos([...result.data.videos]);
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -44,7 +45,7 @@ const WatchLaterProvider = ({ children }) => {
       setWatchLaterList(watchlater);
       addToWatchLaterToast("Added to watchlater");
     } catch (e) {
-      console.error(e);
+      errorToast(e.response.data.message);
     }
   };
   const deleteFromWatchLater = async (videoId) => {
@@ -58,7 +59,7 @@ const WatchLaterProvider = ({ children }) => {
       setWatchLaterList(response.data.watchlater);
       removeFromWatchLater("Removed from watchlater");
     } catch (e) {
-      console.error(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -70,7 +71,7 @@ const WatchLaterProvider = ({ children }) => {
       setLikedVideoList(response.data.likes);
       likedVideoToast("Liked Video");
     } catch (e) {
-      console.error(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -82,7 +83,7 @@ const WatchLaterProvider = ({ children }) => {
       setLikedVideoList(response.data.likes);
       unlikeVideoToast("Unliked Video");
     } catch (e) {
-      console.error(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -93,7 +94,7 @@ const WatchLaterProvider = ({ children }) => {
       const response = await axios.post("/api/user/history", { video }, config);
       setHistoryList(response.data.history);
     } catch (e) {
-      console.error(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -108,7 +109,7 @@ const WatchLaterProvider = ({ children }) => {
       setHistoryList(response.data.history);
       removeFromHistory("Removed from history");
     } catch (e) {
-      console.error(e);
+      errorToast(e.response.data.message);
     }
   };
 

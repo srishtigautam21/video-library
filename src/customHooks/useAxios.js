@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-
+import { errorToast } from "../customHooks/Toastify";
 axios.defaults.baseURL = "";
 
 export const useAxios = () => {
@@ -14,6 +14,7 @@ export const useAxios = () => {
       setResponse(result.data);
     } catch (e) {
       setError(e.response.data.message);
+      errorToast(e.response.data.message);
     } finally {
       setLoading(false);
     }

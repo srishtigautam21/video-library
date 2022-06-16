@@ -13,7 +13,7 @@ const HomePage = () => {
 
   const selectCategory = (category) => {
     setSelectedCategory(category);
-    // console.log(category);
+
     navigate("/explorePage");
   };
   return (

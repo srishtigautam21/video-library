@@ -6,6 +6,7 @@ import {
   playlistToast,
   addVideoToPlaylistoast,
   deletePlaylist,
+  errorToast,
   // eslint-disable-next-line
   removeFromPlaylist,
 } from "../customHooks/Toastify";
@@ -23,7 +24,7 @@ const PlayListProvider = ({ children }) => {
       const result = await axios.get("/api/user/playlists", config);
       setPlayList([...result.data.playlists]);
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -41,7 +42,7 @@ const PlayListProvider = ({ children }) => {
       setPlayList([...result.data.playlists]);
       playlistToast("Playlist added successfully");
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
   const removePlaylist = async (playlistId) => {
@@ -55,7 +56,7 @@ const PlayListProvider = ({ children }) => {
       setPlayList([...result.data.playlists]);
       deletePlaylist("Playlist deleted");
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -86,7 +87,7 @@ const PlayListProvider = ({ children }) => {
       ]);
       addVideoToPlaylistoast("Added to playlist");
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 
@@ -107,7 +108,7 @@ const PlayListProvider = ({ children }) => {
       ]);
       removeFromPlaylist("Removed from playlist");
     } catch (e) {
-      console.log(e);
+      errorToast(e.response.data.message);
     }
   };
 
