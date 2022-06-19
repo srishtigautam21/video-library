@@ -63,3 +63,14 @@
 .profile:hover {
   color: var(--NOTIFICATION-COLOR);
 }
+.navbar-icons {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-btn {
+  background-color: transparent;
+  border: none;
+  margin-right: 2rem;
+  color: var(--COLOR-PRIMARY);
+  cursor: pointer;
+}

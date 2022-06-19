@@ -10,6 +10,7 @@ import {
   HistoryPage,
   Page404,
 } from "./pages/index";
+
 import { Navbar, Sidebar } from "./component";
 import { Route, Routes } from "react-router-dom";
 import { RequireAuth } from "./customHooks/RequireAuth";
@@ -18,7 +19,7 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <>
-      <div className='home-page grid-container'>
+      <div className='home-page grid-container '>
         <Navbar />
         <Sidebar />
 
