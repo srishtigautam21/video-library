@@ -9,10 +9,12 @@ import {
   ClockIcon,
   LikeIconFilled,
 } from "../../Assets/allsvg";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 const SingleVideoPage = () => {
   const { id } = useParams();
   const { openModal, setOpenModal } = useModal();
+  useDocumentTitle("Videos Page");
   const {
     addToWatchLater,
     watchLaterList,

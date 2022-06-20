@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { PlayListModal } from "../../component";
 import { usePlayList } from "../../context";
 import { PlayListCard } from "../../component";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 const PlaylistPage = () => {
   const [openModal, setOpenModal] = useState(false);
   const { playlist, removePlaylist } = usePlayList();
+  useDocumentTitle("Playlist Page");
 
   const [selectedPlaylist, setSelectedPlaylist] = useState(
     playlist.length > 0 ? playlist[0].title : ""

@@ -1,15 +1,17 @@
 import { VideoCard } from "../../component";
 import { VideoFilter } from "../../component";
 import { useCategory } from "../../context";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
+import "./videoListingPage.css";
 
 const VideoListingPage = () => {
   const { category, filterState, setSelectedCategory } = useCategory();
-
+  useDocumentTitle("Explore Page");
   const tempCategory = ["All", ...category];
   return (
     <>
-      <div className='main-content main-display'>
-        <div className='video-container'>
+      <div className='video-container'>
+        <div>
           <div className='video-filters'>
             {tempCategory.map((categor) => (
               <VideoFilter

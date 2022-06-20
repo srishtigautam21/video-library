@@ -34,10 +34,8 @@ const CategoryProvider = ({ children }) => {
     }
   };
   useEffect(() => {
-    if (encodedToken !== null) {
-      getCategory();
-    }
-  }, [encodedToken]);
+    getCategory();
+  }, []);
   return (
     <CategoryContext.Provider
       value={{

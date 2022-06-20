@@ -1,6 +1,6 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { useAuth } from "../context";
+
 import { useNavigate } from "react-router-dom";
 import {
   addToWatchLaterToast,
@@ -14,7 +14,7 @@ const WatchLaterContext = createContext({});
 
 const WatchLaterProvider = ({ children }) => {
   const navigate = useNavigate();
-  const { encodedToken } = useAuth();
+
   const [likedVideoList, setLikedVideoList] = useState([]);
   const [watchLaterList, setWatchLaterList] = useState([]);
   const [historyList, setHistoryList] = useState([]);
@@ -114,10 +114,8 @@ const WatchLaterProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (encodedToken !== null) {
-      getVideo();
-    }
-  }, [encodedToken]);
+    getVideo();
+  }, []);
 
   return (
     <WatchLaterContext.Provider
@@ -133,6 +131,7 @@ const WatchLaterProvider = ({ children }) => {
         historyList,
         deleteFromHistory,
         videos,
+        // videoLoader,
       }}
     >
       {children}

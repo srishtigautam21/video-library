@@ -6,6 +6,7 @@ import { useAuth } from "../../context";
 
 const Navbar = () => {
   const { isUserLoggedIn, logOut } = useAuth();
+  // const { theme, toggle } = useTheme();
   const [open, setOpen] = useState(false);
   return (
     <div className='navbar'>
@@ -16,31 +17,36 @@ const Navbar = () => {
           </Link>
         </div>
         <li className='icons-alignment'>
-          <div className='dropdown'>
-            <UserIcon
-              className='nav-icons'
-              onClick={() => setOpen((visible) => !visible)}
-            />
-            {open && (
-              <div className='dropdown-menu'>
-                {isUserLoggedIn ? (
-                  <Link
-                    className='link content-color'
-                    to='/'
-                    onClick={() => {
-                      logOut();
-                      setOpen((visible) => !visible);
-                    }}
-                  >
-                    Logout
-                  </Link>
-                ) : (
-                  <Link className='dropdown-content login-link' to='/login'>
-                    Login
-                  </Link>
-                )}
-              </div>
-            )}
+          <div className='navbar-icons'>
+            {/* <button id='toggle-theme' className='nav-btn ' onClick={toggle}>
+              {theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+            </button> */}
+            <div className='dropdown'>
+              <UserIcon
+                className='nav-icons'
+                onClick={() => setOpen((visible) => !visible)}
+              />
+              {open && (
+                <div className='dropdown-menu'>
+                  {isUserLoggedIn ? (
+                    <Link
+                      className='link content-color'
+                      to='/'
+                      onClick={() => {
+                        logOut();
+                        setOpen((visible) => !visible);
+                      }}
+                    >
+                      Logout
+                    </Link>
+                  ) : (
+                    <Link className='dropdown-content login-link' to='/login'>
+                      Login
+                    </Link>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </li>
       </nav>

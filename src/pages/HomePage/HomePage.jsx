@@ -6,8 +6,10 @@ import breakfast from "../../Assets/Images/breakfast.jpeg";
 import lunch from "../../Assets/Images/lunch.jpg";
 import snacks from "../../Assets/Images/snacks.jpg";
 import dinner from "../../Assets/Images/dinner.jpg";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 const HomePage = () => {
+  useDocumentTitle("Home Page");
   const navigate = useNavigate();
   const { setSelectedCategory } = useCategory();
 

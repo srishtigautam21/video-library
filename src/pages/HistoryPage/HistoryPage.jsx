@@ -1,8 +1,10 @@
 import { HistoryCard } from "../../component";
 import { useWatchLater } from "../../context";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 const HistoryPage = () => {
+  useDocumentTitle("History Page");
   const { historyList } = useWatchLater();
   return (
     <>

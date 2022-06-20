@@ -7,3 +7,4 @@ export { HistoryCard } from "./HistoryCard/HistoryCard";
 export { PlayListModal } from "./PlayListModal/PlayListModal";
 export { PlayListCard } from "./PlayListCard/PlayListCard";
 export { VideoFilter } from "./VideoFilter/VideoFilter";
+export { Loading } from "./Loading/Loading";

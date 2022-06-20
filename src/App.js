@@ -8,8 +8,10 @@ import {
   WatchLaterPage,
   LikedVideosPage,
   HistoryPage,
+  Page404,
 } from "./pages/index";
-import { Navbar, Sidebar } from "./component";
+
+import { Navbar, Sidebar, Loading } from "./component";
 import { Route, Routes } from "react-router-dom";
 import { RequireAuth } from "./customHooks/RequireAuth";
 import { ToastContainer } from "react-toastify";
@@ -17,15 +19,16 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <>
-      <div className='home-page grid-container'>
+      <div className='home-page grid-container '>
         <Navbar />
         <Sidebar />
-
+        <Loading />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/explorePage' element={<VideoListingPage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/video/:id' element={<SingleVideoPage />} />
+          <Route path='*' element={<Page404 />} />
           <Route
             path='/playlist'
             element={
@@ -58,14 +61,8 @@ function App() {
               </RequireAuth>
             }
           />
-
-          {/* <Route element={<RequireAuth />}> */}
-          {/* <Route path='/playlist' element={<PlaylistPage />} /> */}
-          {/* <Route path='/watchlater' element={<WatchLaterPage />} /> */}
-          {/* <Route path='/liked' element={<LikedVideosPage />} />
-            <Route path='/history' element={<HistoryPage />} /> */}
-          {/* </Route> */}
         </Routes>
+
         <ToastContainer />
       </div>
     </>
