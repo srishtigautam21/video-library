@@ -7,7 +7,7 @@ const AuthContext = createContext({});
 const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { response, loading, error, fetchData } = useAxios();
+  const { response, authLoading, error, fetchData } = useAxios();
   const [loginUser, setLoginUser] = useState({ email: "", password: "" });
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [user, setUser] = useState({});
@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
       value={{
         loginHandler,
         isUserLoggedIn,
-        loading,
+        authLoading,
         error,
         setLoginUser,
         loginUser,

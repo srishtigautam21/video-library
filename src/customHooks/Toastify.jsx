@@ -62,7 +62,7 @@ const deletePlaylist = (text) => {
     autoClose: 1500,
   });
 };
-const removeFromPlaylist = (text) => {
+const removeFromPlaylistToast = (text) => {
   toast.warn(text, {
     position: "top-center",
     autoClose: 1500,
@@ -85,6 +85,6 @@ export {
   removeFromWatchLater,
   unlikeVideoToast,
   deletePlaylist,
-  removeFromPlaylist,
+  removeFromPlaylistToast,
   removeFromHistory,
 };

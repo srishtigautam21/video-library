@@ -7,8 +7,7 @@ import {
   addVideoToPlaylistoast,
   deletePlaylist,
   errorToast,
-  // eslint-disable-next-line
-  removeFromPlaylist,
+  removeFromPlaylistToast,
 } from "../customHooks/Toastify";
 
 const PlayListContext = createContext({});
@@ -16,6 +15,9 @@ const PlayListContext = createContext({});
 const PlayListProvider = ({ children }) => {
   const [playlist, setPlayList] = useState([]);
   const { encodedToken } = useAuth();
+  const [playlistLoading, setPlaylistLoading] = useState(false);
+  const [videoToPlaylistLoading, setVideoToPlaylistLoading] = useState(false);
+  const [deletePlaylistLoader, setDeletePlaylistLoader] = useState(false);
 
   const getPlaylist = async () => {
     const encodedToken = localStorage.getItem("myToken");
@@ -29,6 +31,7 @@ const PlayListProvider = ({ children }) => {
   };
 
   const addToPlaylist = async (title, description) => {
+    setPlaylistLoading(true);
     const encodedToken = localStorage.getItem("myToken");
     const config = { headers: { authorization: encodedToken } };
     try {
@@ -41,11 +44,13 @@ const PlayListProvider = ({ children }) => {
       );
       setPlayList([...result.data.playlists]);
       playlistToast("Playlist added successfully");
+      setPlaylistLoading(false);
     } catch (e) {
       errorToast(e.response.data.message);
     }
   };
   const removePlaylist = async (playlistId) => {
+    setDeletePlaylistLoader(true);
     const encodedToken = localStorage.getItem("myToken");
     const config = { headers: { authorization: encodedToken } };
     try {
@@ -54,6 +59,7 @@ const PlayListProvider = ({ children }) => {
         config
       );
       setPlayList([...result.data.playlists]);
+      setDeletePlaylistLoader(false);
       deletePlaylist("Playlist deleted");
     } catch (e) {
       errorToast(e.response.data.message);
@@ -61,6 +67,7 @@ const PlayListProvider = ({ children }) => {
   };
 
   const addVideoToPlaylist = async (playlistId, video) => {
+    setVideoToPlaylistLoading(true);
     const encodedToken = localStorage.getItem("myToken");
     const config = { headers: { authorization: encodedToken } };
     try {
@@ -86,6 +93,7 @@ const PlayListProvider = ({ children }) => {
         ),
       ]);
       addVideoToPlaylistoast("Added to playlist");
+      setVideoToPlaylistLoading(false);
     } catch (e) {
       errorToast(e.response.data.message);
     }
@@ -106,7 +114,7 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
-      removeFromPlaylist("Removed from playlist");
+      removeFromPlaylistToast("Removed from playlist");
     } catch (e) {
       errorToast(e.response.data.message);
     }
@@ -126,6 +134,9 @@ const PlayListProvider = ({ children }) => {
         removePlaylist,
         addVideoToPlaylist,
         removeFromPlaylist,
+        playlistLoading,
+        videoToPlaylistLoading,
+        deletePlaylistLoader,
       }}
     >
       {children}

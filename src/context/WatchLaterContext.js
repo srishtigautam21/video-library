@@ -19,13 +19,16 @@ const WatchLaterProvider = ({ children }) => {
   const [watchLaterList, setWatchLaterList] = useState([]);
   const [historyList, setHistoryList] = useState([]);
   const [videos, setVideos] = useState([]);
+  const [videoLoader, setVideoLoader] = useState(false);
 
   const getVideo = async () => {
+    setVideoLoader(true);
     const encodedToken = localStorage.getItem("myToken");
     const config = { headers: { authorization: encodedToken } };
     try {
       const result = await axios.get("/api/videos", config);
       setVideos([...result.data.videos]);
+      setVideoLoader(false);
     } catch (e) {
       errorToast(e.response.data.message);
     }
@@ -133,6 +136,7 @@ const WatchLaterProvider = ({ children }) => {
         historyList,
         deleteFromHistory,
         videos,
+        videoLoader,
       }}
     >
       {children}

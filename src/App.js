@@ -11,7 +11,7 @@ import {
   Page404,
 } from "./pages/index";
 
-import { Navbar, Sidebar } from "./component";
+import { Navbar, Sidebar, Loading } from "./component";
 import { Route, Routes } from "react-router-dom";
 import { RequireAuth } from "./customHooks/RequireAuth";
 import { ToastContainer } from "react-toastify";
@@ -22,7 +22,7 @@ function App() {
       <div className='home-page grid-container '>
         <Navbar />
         <Sidebar />
-
+        <Loading />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/explorePage' element={<VideoListingPage />} />
@@ -62,6 +62,7 @@ function App() {
             }
           />
         </Routes>
+
         <ToastContainer />
       </div>
     </>
