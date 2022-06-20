@@ -1,18 +1,17 @@
 import ReactLoading from "react-loading";
-import { useAuth, usePlayList, useWatchLater } from "../../context";
+import { useAuth, usePlayList } from "../../context";
 import "./loading.css";
 
 const Loading = () => {
   const { playlistLoading, videoToPlaylistLoading, deletePlaylistLoader } =
     usePlayList();
   const { authLoading } = useAuth();
-  const { videoLoader } = useWatchLater();
+  // const { videoLoader } = useWatchLater();
   if (
     !playlistLoading &&
     !videoToPlaylistLoading &&
     !deletePlaylistLoader &&
-    !authLoading &&
-    !videoLoader
+    !authLoading
   )
     return null;
   return (
@@ -45,13 +44,13 @@ const Loading = () => {
           color={"#04c76f"}
         />
       )}
-      {videoLoader && (
+      {/* {videoLoader && (
         <ReactLoading
           className='react-loading'
           type={"spin"}
           color={"#04c76f"}
         />
-      )}
+      )} */}
     </div>
   );
 };

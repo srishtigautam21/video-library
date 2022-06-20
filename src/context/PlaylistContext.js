@@ -78,13 +78,7 @@ const PlayListProvider = ({ children }) => {
         },
         config
       );
-      //Future TODO
-      // const updatedPlaylists = playlist.some((play) => play._id === playlistId)
-      //   ? playlist.map((play) =>
-      //       play._id === playlistId ? result.data.playlist : play
-      //     )
-      //   : playlist.concat(result.data.playlist);
-      // setPlayList(updatedPlaylists);
+
       setPlayList((s) => [
         ...s.map((playlist) =>
           playlist._id === result.data.playlist._id

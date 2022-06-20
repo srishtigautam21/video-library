@@ -17,10 +17,9 @@ export const useAxios = () => {
     } catch (e) {
       setError(e.response.data.message);
       errorToast(e.response.data.message);
+    } finally {
+      setAuthLoading(false);
     }
-    // } finally {
-    //   setAuthLoading(false);
-    // }
   };
   return { response, authLoading, error, fetchData };
 };
