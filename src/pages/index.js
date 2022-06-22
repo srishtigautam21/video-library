@@ -7,3 +7,4 @@ export { WatchLaterPage } from "./WatchLaterPage/WatchLaterPage";
 export { LikedVideosPage } from "./LikedVideosPage/LikedVideosPage";
 export { HistoryPage } from "./HistoryPage/HistoryPage";
 export { Page404 } from "./Page404/Page404";
+export { SignUpPage } from "./SignUpPage/SignUpPage";

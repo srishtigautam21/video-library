@@ -20,28 +20,44 @@ const Sidebar = () => {
     <>
       <div className='sidebar md-margin'>
         <NavLink to='/' className={activeStyle}>
-          <HomeIcon />
-          <small>Home</small>
+          <div className='sidebar-icon'>
+            <HomeIcon />
+            <small>Home</small>
+          </div>
         </NavLink>
         <NavLink to='/explorePage' className={activeStyle}>
-          <ExploreIcon />
-          <small>Explore</small>
+          <div className='sidebar-icon'>
+            {" "}
+            <ExploreIcon />
+            <small>Explore</small>
+          </div>
         </NavLink>
         <NavLink to='/playlist' className={activeStyle}>
-          <PlaylistIcon />
-          <small>Playlist</small>
+          <div className='sidebar-icon'>
+            {" "}
+            <PlaylistIcon />
+            <small>Playlist</small>
+          </div>
         </NavLink>
         <NavLink to='/watchlater' className={activeStyle}>
-          <ClockIcon />
-          <small>Watch Later</small>
+          <div className='sidebar-icon'>
+            {" "}
+            <ClockIcon />
+            <small>Watch Later</small>
+          </div>
         </NavLink>
         <NavLink to='/liked' className={activeStyle}>
-          <LikeIcon />
-          <small>Liked Videos</small>
+          <div className='sidebar-icon'>
+            <LikeIcon />
+            <small>Liked Videos</small>
+          </div>
         </NavLink>
         <NavLink to='/history' className={activeStyle}>
-          <HistoryIcon />
-          <small>History</small>
+          <div className='sidebar-icon'>
+            {" "}
+            <HistoryIcon />
+            <small>History</small>
+          </div>
         </NavLink>
       </div>
     </>

@@ -9,6 +9,7 @@ import {
   LikedVideosPage,
   HistoryPage,
   Page404,
+  SignUpPage,
 } from "./pages/index";
 
 import { Navbar, Sidebar, Loading } from "./component";
@@ -27,6 +28,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/explorePage' element={<VideoListingPage />} />
           <Route path='/login' element={<LoginPage />} />
+          <Route path='/signup' element={<SignUpPage />} />
           <Route path='/video/:id' element={<SingleVideoPage />} />
           <Route path='*' element={<Page404 />} />
           <Route

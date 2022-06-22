@@ -76,7 +76,8 @@ const LoginPage = () => {
 
         <Link to='/signup' className='signup-page-link signup-page-link-margin'>
           <p>
-            New to nurish? <span className='color-green'>SignUp Now</span>
+            New to nutrismart TV?{" "}
+            <span className='color-green'>SignUp Now</span>
           </p>
         </Link>
       </form>
