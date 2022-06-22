@@ -48,9 +48,9 @@
   font-weight: 500;
   letter-spacing: 1px;
 }
-.signup-page-link-margin {
+/* .signup-page-link-margin {
   margin: 0 0 1rem 3rem;
-}
+} */
 .login-button {
   height: 3.5rem;
   width: 29rem;
@@ -60,4 +60,7 @@
   color: var(--LINK);
   text-decoration: underline;
   cursor: pointer;
+}
+.color-green {
+  color: var(--COLOR-PRIMARY);
 }

@@ -2,16 +2,24 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAxios } from "../customHooks/useAxios";
 import { loginLogoutToast } from "../customHooks/Toastify";
+import axios from "axios";
 
 const AuthContext = createContext({});
 const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const authInitialState = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  };
   const { response, authLoading, error, fetchData } = useAxios();
   const [loginUser, setLoginUser] = useState({ email: "", password: "" });
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [encodedToken, setEncodedToken] = useState(null);
+  const [signupUser, setSignUpUser] = useState(authInitialState);
 
   let from = location.state?.from?.pathname || "/";
 
@@ -52,6 +60,24 @@ const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  const signUpHandler = async (e, email, password, firstName, lastName) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("/api/auth/signup", {
+        email,
+        password,
+        firstName,
+        lastName,
+      });
+      localStorage.setItem("myToken", response.data.encodedToken);
+      setUser(response.data.createdUser);
+      setSignUpUser({ email: "", password: "", firstName: "", lastName: "" });
+      navigate("/login");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -64,6 +90,9 @@ const AuthProvider = ({ children }) => {
         user,
         encodedToken,
         logOut,
+        signupUser,
+        setSignUpUser,
+        signUpHandler,
       }}
     >
       {children}
