@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 .md-pd {
-  padding: 1.2rem 0.5rem 1.2rem 1.5rem;
+  padding: 1.2rem 1rem 1.2rem 1rem;
 }
 .aside-heading {
   text-decoration: none;
@@ -17,4 +17,10 @@
 }
 .inactive-link:hover {
   background-color: var(--INACTIVE-LINK);
+}
+.sidebar-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
