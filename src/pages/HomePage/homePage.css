@@ -47,7 +47,8 @@
 }
 .categories-container {
   display: flex;
-  column-gap: 2.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   align-items: center;
   justify-content: space-around;
   margin: 1.8rem 3rem 4rem 3rem;
