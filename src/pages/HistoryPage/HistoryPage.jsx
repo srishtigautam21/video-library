@@ -1,4 +1,4 @@
-import { HistoryCard } from "../../component";
+import { HistoryCard, Footer } from "../../component";
 import { useWatchLater } from "../../context";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
@@ -22,8 +22,9 @@ const HistoryPage = () => {
           ))}
         </div>
       )}
-
-      {/* </div> */}
+      <div className='footer footer-mediaquery'>
+        <Footer />
+      </div>
     </>
   );
 };

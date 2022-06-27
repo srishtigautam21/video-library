@@ -1,8 +1,8 @@
 import "./playlistPage.css";
 import { useState, useEffect } from "react";
-import { PlayListModal } from "../../component";
+import { PlayListModal, Footer, PlayListCard } from "../../component";
 import { usePlayList } from "../../context";
-import { PlayListCard } from "../../component";
+
 import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 const PlaylistPage = () => {
@@ -98,6 +98,9 @@ const PlaylistPage = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className='footer footer-mediaquery'>
+        <Footer />
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import { LikedVideoCard } from "../../component";
+import { LikedVideoCard, Footer } from "../../component";
 import { useWatchLater } from "../../context/WatchLaterContext";
 import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 import { Link } from "react-router-dom";
@@ -23,6 +23,9 @@ const LikedVideosPage = () => {
           ))}
         </div>
       )}
+      <div className='footer footer-mediaquery'>
+        <Footer />
+      </div>
     </>
   );
 };

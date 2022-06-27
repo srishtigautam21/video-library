@@ -1,5 +1,5 @@
 import { useWatchLater } from "../../context";
-import { WatchLaterCard } from "../../component";
+import { WatchLaterCard, Footer } from "../../component";
 import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 import "./watchLaterPage.css";
 import { Link } from "react-router-dom";
@@ -23,6 +23,9 @@ const WatchLaterPage = () => {
           ))}
         </div>
       )}
+      <div className='footer footer-mediaquery'>
+        <Footer />
+      </div>
     </>
   );
 };

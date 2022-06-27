@@ -1,5 +1,5 @@
-import { VideoCard } from "../../component";
-import { VideoFilter } from "../../component";
+import { VideoCard, VideoFilter, Footer } from "../../component";
+
 import { useCategory } from "../../context";
 import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 import "./videoListingPage.css";
@@ -28,6 +28,9 @@ const VideoListingPage = () => {
             })}
           </div>
         </div>
+      </div>
+      <div className='footer footer-mediaquery'>
+        <Footer />
       </div>
     </>
   );

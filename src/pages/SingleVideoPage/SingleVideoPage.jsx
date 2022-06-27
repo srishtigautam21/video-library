@@ -2,7 +2,7 @@ import { useParams, useLocation } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./singleVideoPage.css";
 import { useWatchLater, useModal } from "../../context";
-import { PlayListModal } from "../../component";
+import { PlayListModal, Footer } from "../../component";
 import {
   LikeIcon,
   PlaylistIcon,
@@ -128,6 +128,9 @@ const SingleVideoPage = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='footer footer-mediaquery'>
+        <Footer />
       </div>
     </>
   );

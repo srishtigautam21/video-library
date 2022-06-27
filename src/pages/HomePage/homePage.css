@@ -107,7 +107,7 @@
 @media only screen and (max-width: 600px) {
   .grid-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 2fr 0.3fr;
+    grid-template-rows: 0fr 2fr 0fr;
     grid-template-areas:
       "navbar"
       "main-content"
