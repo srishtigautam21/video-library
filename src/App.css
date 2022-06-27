@@ -17,3 +17,11 @@ a {
 .Toastify__toast-container--top-right {
   top: 7rem;
 }
+.sidebar-ht {
+  height: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .sidebar-mediaquery {
+    display: none;
+  }
+}
