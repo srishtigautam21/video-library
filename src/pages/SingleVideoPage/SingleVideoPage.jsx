@@ -1,5 +1,6 @@
 import { useParams, useLocation } from "react-router-dom";
-import YouTube from "react-youtube";
+// import YouTube from "react-youtube";
+import ReactPlayer from "react-player";
 import "./singleVideoPage.css";
 import { useWatchLater, useModal } from "../../context";
 import { PlayListModal, Footer } from "../../component";
@@ -24,18 +25,33 @@ const SingleVideoPage = () => {
   } = useWatchLater();
   const { state } = useLocation();
   const video = state;
-  const videoOnReady = (event) => {
-    const player = event.target;
+  // const videoOnReady = (event) => {
+  //   const player = event.target;
+  //   player.seekTo(0);
+  // };
+  // const opts = {
+  // height: "450",
+  // width: "700",
+  //   height: "100%",
+  //   width: "100%",
+  //   playerVars: {
+  //     autoplay: 1,
+  //   },
+  // };
+  const ResponsivePlayer = ({ id }) => {
+    return (
+      <div className='player-wrapper'>
+        <ReactPlayer
+          className='react-player'
+          url={`https://www.youtube.com/watch?v=${id}`}
+          width='100%'
+          height='100%'
+          controls={true}
+        />
+      </div>
+    );
+  };
 
-    player.seekTo(0);
-  };
-  const opts = {
-    height: "450",
-    width: "700",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
   const isLiked = likedVideoList.findIndex((like) => like._id === video._id);
   const isInWatchLater = watchLaterList.findIndex(
     (watchlater) => watchlater._id === video._id
@@ -47,7 +63,19 @@ const SingleVideoPage = () => {
     <>
       <div className='videoPage-wrapper'>
         <div className='video-container'>
-          <YouTube videoId={id} opts={opts} onReady={videoOnReady} />
+          {/* <div className='player-wrapper'>
+            <YouTube
+              videoId={id}
+              opts={opts}
+              onReady={videoOnReady}
+              className='react-player'
+            />
+          </div> */}
+          <div className='single-video-player'>
+            <ResponsivePlayer id={id} />
+          </div>
+
+          {/* <YouTube videoId={id} opts={opts} onReady={videoOnReady} /> */}
           <div className='video-content-container'>
             <div className='videoPage-title'>{video.title}</div>
             <div className='video-operation'>

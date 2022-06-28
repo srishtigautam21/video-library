@@ -15,8 +15,8 @@
 }
 .video-filters {
   margin: 2rem 0;
-  /* padding: 0 5px; */
+  padding: 0 5px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
 }
