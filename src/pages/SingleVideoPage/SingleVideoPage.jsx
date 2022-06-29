@@ -1,6 +1,5 @@
 import { useParams, useLocation } from "react-router-dom";
-// import YouTube from "react-youtube";
-// import ReactPlayer from "react-player";
+
 import "./singleVideoPage.css";
 import { useWatchLater, useModal } from "../../context";
 import { PlayListModal, Footer } from "../../component";
@@ -25,31 +24,6 @@ const SingleVideoPage = () => {
   } = useWatchLater();
   const { state } = useLocation();
   const video = state;
-  // const videoOnReady = (event) => {
-  //   const player = event.target;
-  //   player.seekTo(0);
-  // };
-  // const opts = {
-  //   height: "450",
-  //   width: "700",
-  //   playerVars: {
-  //     autoplay: 1,
-  //   },
-  // };
-  // const ResponsivePlayer = ({ id }) => {
-  //   return (
-  //     <div className='player-wrapper'>
-  //     <ReactPlayer
-  //       className='react-player'
-  //       url={`https://www.youtube.com/watch?v=${id}`}
-  //       width='100%'
-  //       height='100%'
-
-  //       controls={true}
-  //     />
-  //    </div>
-  //   );
-  // };
 
   const isLiked = likedVideoList.findIndex((like) => like._id === video._id);
   const isInWatchLater = watchLaterList.findIndex(
@@ -60,7 +34,6 @@ const SingleVideoPage = () => {
   };
   return (
     <>
-      {/* <div className='videoPage-wrapper'> */}
       <div className='video-container'>
         <div className='iframe-container'>
           <iframe
@@ -72,24 +45,6 @@ const SingleVideoPage = () => {
             allow='accelerometer; clipboard-write; encrypted-media; gyroscope'
           ></iframe>
         </div>
-        {/* <div className='player-wrapper'>
-            <YouTube
-              videoId={id}
-              opts={opts}
-              onReady={videoOnReady}
-              className='react-player'
-            />
-          </div> */}
-        {/* <div className='single-video-player'>
-          <ResponsivePlayer id={id} />
-        </div> */}
-
-        {/* <YouTube
-            className='player'
-            videoId={id}
-            opts={opts}
-            onReady={videoOnReady}
-          /> */}
         <div className='video-content-container'>
           <div className='videoPage-title'>{video.title}</div>
           <div className='video-operation'>
@@ -165,12 +120,11 @@ const SingleVideoPage = () => {
               />
               <div className='incr-font-creator'>{video.creator}</div>
             </div>
-
             <div className='video-discription'>{video.description}</div>
           </div>
         </div>
       </div>
-      {/* </div> */}
+
       <div className='footer footer-mediaquery'>
         <Footer />
       </div>

@@ -19,9 +19,11 @@ const LikedVideosPage = () => {
       ) : (
         <div className='watch-later-container'>
           <div className='each-page-header'>Liked videos</div>
-          {likedVideoList?.map((videoCard) => (
-            <LikedVideoCard key={videoCard._id} videoCard={videoCard} />
-          ))}
+          <div className='all-video-wrapper'>
+            {likedVideoList?.map((videoCard) => (
+              <LikedVideoCard key={videoCard._id} videoCard={videoCard} />
+            ))}
+          </div>
         </div>
       )}
       <div className='footer footer-mediaquery'>

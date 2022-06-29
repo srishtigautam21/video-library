@@ -1,7 +1,7 @@
 .watch-later-container {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2rem; */
   padding: 2rem;
 }
 .empty-page {
@@ -15,4 +15,9 @@
   font-size: 2rem;
   font-weight: 600;
   margin: 1rem;
+}
+.all-video-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }

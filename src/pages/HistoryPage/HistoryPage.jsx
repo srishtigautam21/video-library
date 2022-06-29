@@ -19,9 +19,11 @@ const HistoryPage = () => {
       ) : (
         <div className='watch-later-container'>
           <div className='each-page-header'>History</div>
-          {historyList?.map((videoCard) => (
-            <HistoryCard key={videoCard._id} videoCard={videoCard} />
-          ))}
+          <div className='all-video-wrapper'>
+            {historyList?.map((videoCard) => (
+              <HistoryCard key={videoCard._id} videoCard={videoCard} />
+            ))}
+          </div>
         </div>
       )}
       <div className='footer footer-mediaquery'>
