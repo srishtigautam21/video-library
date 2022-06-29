@@ -1,5 +1,6 @@
 .watch-later-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
 }
@@ -9,4 +10,9 @@
   align-items: center;
   justify-content: center;
   min-height: 100%;
+}
+.each-page-header {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1rem;
 }

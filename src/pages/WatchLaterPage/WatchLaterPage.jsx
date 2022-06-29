@@ -18,6 +18,7 @@ const WatchLaterPage = () => {
         </div>
       ) : (
         <div className='watch-later-container'>
+          <div className='each-page-header'>Watchlater</div>
           {watchLaterList?.map((videoCard) => (
             <WatchLaterCard key={videoCard._id} videoCard={videoCard} />
           ))}

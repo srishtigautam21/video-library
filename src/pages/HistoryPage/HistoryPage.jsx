@@ -6,6 +6,7 @@ import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 const HistoryPage = () => {
   useDocumentTitle("History Page");
   const { historyList } = useWatchLater();
+
   return (
     <>
       {historyList.length === 0 ? (
@@ -17,6 +18,7 @@ const HistoryPage = () => {
         </div>
       ) : (
         <div className='watch-later-container'>
+          <div className='each-page-header'>History</div>
           {historyList?.map((videoCard) => (
             <HistoryCard key={videoCard._id} videoCard={videoCard} />
           ))}
