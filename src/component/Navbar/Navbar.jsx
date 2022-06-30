@@ -6,10 +6,9 @@ import { useAuth } from "../../context";
 
 const Navbar = () => {
   const { isUserLoggedIn, logOut } = useAuth();
-  // const { theme, toggle } = useTheme();
+
   const [open, setOpen] = useState(false);
   return (
-    // <div className='navbar'>
     <nav className='nav-component nav-padding'>
       <div className='content-header video-lib-header'>
         <Link className='component-libraryl-link' to='/'>
@@ -18,9 +17,6 @@ const Navbar = () => {
       </div>
       <li className='icons-alignment'>
         <div className='navbar-icons'>
-          {/* <button id='toggle-theme' className='nav-btn ' onClick={toggle}>
-              {theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-            </button> */}
           <div className='dropdown'>
             <UserIcon
               className='nav-icons'
@@ -50,7 +46,6 @@ const Navbar = () => {
         </div>
       </li>
     </nav>
-    // </div>
   );
 };
 export { Navbar };

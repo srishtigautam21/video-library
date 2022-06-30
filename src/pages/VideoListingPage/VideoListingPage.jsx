@@ -11,7 +11,6 @@ const VideoListingPage = () => {
   return (
     <>
       <div className='video-container'>
-        {/* <div> */}
         <div className='video-filters'>
           {tempCategory.map((categor) => (
             <VideoFilter
@@ -22,12 +21,10 @@ const VideoListingPage = () => {
           ))}
         </div>
         <div className='vertical-cards'>
-          {/* {videos.map((video) => { */}
           {filterState().map((video) => {
             return <VideoCard key={video._id} video={video} />;
           })}
         </div>
-        {/* </div> */}
       </div>
       <div className='footer footer-mediaquery'>
         <Footer />

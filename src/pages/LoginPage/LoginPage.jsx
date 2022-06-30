@@ -12,7 +12,7 @@ const LoginPage = () => {
       <div className='login-signup-page height-100'>
         <form className='input-form login'>
           <h1 className='login-bottom-margin text-center'>Login</h1>
-          {/* {error === "noerror" ? "" : <div className='error'>{error}</div>} */}
+
           <label htmlFor='email-input' className='label-font-size'>
             Email Address*
           </label>

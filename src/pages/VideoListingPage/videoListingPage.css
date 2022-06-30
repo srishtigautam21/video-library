@@ -1,10 +1,5 @@
 .video-container {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
   padding: 0 0 1rem 0rem;
-  /* background-color: var(--VIDEO-LIB-BACKGROUND-COLOR); */
 }
 .vertical-cards {
   display: flex;
