@@ -37,9 +37,9 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
                     <label htmlFor={obj._id} className='checkbox-input'>
                       <input
                         type='checkbox'
-                        id={obj._id}
+                        id={obj?._id}
                         className='margin-right checkbox-input'
-                        checked={obj.videos.some((v) => v._id === video._id)}
+                        checked={obj?.videos?.some((v) => v._id === video._id)}
                         onChange={(e) => {
                           addVideoToPlaylistHandler(e, obj, video);
                         }}

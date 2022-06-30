@@ -10,7 +10,6 @@ import {
   PlayListProvider,
   WatchLaterProvider,
   CategoryProvider,
-  ThemeProvider,
 } from "./context";
 
 // Call make Server
@@ -19,19 +18,17 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <ThemeProvider>
-        <AuthProvider>
-          <WatchLaterProvider>
-            <PlayListProvider>
-              <ModalProvider>
-                <CategoryProvider>
-                  <App />
-                </CategoryProvider>
-              </ModalProvider>
-            </PlayListProvider>
-          </WatchLaterProvider>
-        </AuthProvider>
-      </ThemeProvider>
+      <AuthProvider>
+        <WatchLaterProvider>
+          <PlayListProvider>
+            <ModalProvider>
+              <CategoryProvider>
+                <App />
+              </CategoryProvider>
+            </ModalProvider>
+          </PlayListProvider>
+        </WatchLaterProvider>
+      </AuthProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,11 +1,6 @@
-.videoPage-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 .video-container {
   margin-top: 2rem;
+  padding: 2rem;
 }
 .videoPage-title {
   font-size: 2rem;
@@ -62,4 +57,27 @@
 }
 .video-icon-color {
   color: var(--COLOR-PRIMARY);
+}
+.video-discription {
+  line-height: 2.3rem;
+  font-size: 1.8rem;
+}
+.player {
+  width: 100%;
+  height: 100%;
+}
+.iframe-container {
+  height: 90vh;
+}
+@media screen and (max-width: 800px) {
+  .iframe-container {
+    height: 50vh;
+  }
+}
+@media screen and(max-width:400px) {
+  .icon-hide {
+    font-size: 1rem;
+    font-weight: 400;
+    padding-right: 2px;
+  }
 }

@@ -1,4 +1,4 @@
-import { LikedVideoCard } from "../../component";
+import { LikedVideoCard, Footer } from "../../component";
 import { useWatchLater } from "../../context/WatchLaterContext";
 import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 import { Link } from "react-router-dom";
@@ -18,11 +18,17 @@ const LikedVideosPage = () => {
         </div>
       ) : (
         <div className='watch-later-container'>
-          {likedVideoList?.map((videoCard) => (
-            <LikedVideoCard key={videoCard._id} videoCard={videoCard} />
-          ))}
+          <div className='each-page-header'>Liked videos</div>
+          <div className='all-video-wrapper'>
+            {likedVideoList?.map((videoCard) => (
+              <LikedVideoCard key={videoCard._id} videoCard={videoCard} />
+            ))}
+          </div>
         </div>
       )}
+      <div className='footer footer-mediaquery'>
+        <Footer />
+      </div>
     </>
   );
 };

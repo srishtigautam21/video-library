@@ -102,3 +102,8 @@
 .checkbox-input {
   cursor: pointer;
 }
+@media only screen and (max-width: 740px) {
+  .modal-container {
+    min-height: 30rem;
+  }
+}

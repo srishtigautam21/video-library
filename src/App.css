@@ -1,14 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;500;700;900&display=swap");
 
-body {
-  font-family: "Pacifico", cursive;
-  font-family: "Roboto", sans-serif;
-}
 :root {
   --VIDEO-LIB-BACKGROUND-COLOR: rgb(245, 245, 220);
   --INACTIVE-LINK: rgb(222, 222, 222);
   --BACKGROUND-MODAL: rgba(143, 139, 139, 0.7);
 }
+body {
+  font-family: "Pacifico", cursive;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--VIDEO-LIB-BACKGROUND-COLOR);
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -16,4 +18,12 @@ a {
 /* CSS for toast */
 .Toastify__toast-container--top-right {
   top: 7rem;
+}
+.sidebar-ht {
+  height: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .sidebar-mediaquery {
+    display: none;
+  }
 }

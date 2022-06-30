@@ -1,5 +1,5 @@
 import { useWatchLater } from "../../context";
-import { WatchLaterCard } from "../../component";
+import { WatchLaterCard, Footer } from "../../component";
 import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 import "./watchLaterPage.css";
 import { Link } from "react-router-dom";
@@ -18,11 +18,17 @@ const WatchLaterPage = () => {
         </div>
       ) : (
         <div className='watch-later-container'>
-          {watchLaterList?.map((videoCard) => (
-            <WatchLaterCard key={videoCard._id} videoCard={videoCard} />
-          ))}
+          <div className='each-page-header'>Watchlater</div>
+          <div className='all-video-wrapper'>
+            {watchLaterList?.map((videoCard) => (
+              <WatchLaterCard key={videoCard._id} videoCard={videoCard} />
+            ))}
+          </div>
         </div>
       )}
+      <div className='footer footer-mediaquery'>
+        <Footer />
+      </div>
     </>
   );
 };

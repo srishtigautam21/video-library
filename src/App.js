@@ -22,7 +22,9 @@ function App() {
     <>
       <div className='home-page grid-container '>
         <Navbar />
+
         <Sidebar />
+
         <Loading />
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -64,7 +66,6 @@ function App() {
             }
           />
         </Routes>
-
         <ToastContainer />
       </div>
     </>

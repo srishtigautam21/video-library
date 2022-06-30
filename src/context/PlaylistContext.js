@@ -14,6 +14,7 @@ const PlayListContext = createContext({});
 
 const PlayListProvider = ({ children }) => {
   const [playlist, setPlayList] = useState([]);
+
   const { encodedToken } = useAuth();
   const [playlistLoading, setPlaylistLoading] = useState(false);
   const [videoToPlaylistLoading, setVideoToPlaylistLoading] = useState(false);
@@ -43,6 +44,7 @@ const PlayListProvider = ({ children }) => {
         config
       );
       setPlayList([...result.data.playlists]);
+
       playlistToast("Playlist added successfully");
       setPlaylistLoading(false);
     } catch (e) {
@@ -86,6 +88,7 @@ const PlayListProvider = ({ children }) => {
             : playlist
         ),
       ]);
+
       addVideoToPlaylistoast("Added to playlist");
       setVideoToPlaylistLoading(false);
     } catch (e) {

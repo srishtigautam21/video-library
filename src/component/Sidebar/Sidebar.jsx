@@ -18,7 +18,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className='sidebar md-margin'>
+      <div className='sidebar-ht sidebar md-margin sidebar-mediaquery'>
         <NavLink to='/' className={activeStyle}>
           <div className='sidebar-icon'>
             <HomeIcon />

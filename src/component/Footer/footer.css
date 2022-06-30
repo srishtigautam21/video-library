@@ -1,0 +1,17 @@
+.footer-active-link {
+  background-color: var(--darkerofseconadary);
+  border-radius: 2rem;
+}
+.footer-inactive-link:hover {
+  background-color: rgb(222, 222, 222);
+  border-radius: 2rem;
+}
+.footer-md-pd {
+  padding: 1rem;
+}
+.footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
