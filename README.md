@@ -1,14 +1,23 @@
 <div align="center">
 <img alt="logo" src="public\favicon.ico" />
 <h1 >Nutrismart-TV</h1>
-<h2>It is a video streaming platform to help people easliy find recepies for nutritious food.</h2>
 </div>
+
+https://user-images.githubusercontent.com/82943455/177601317-b31e6d9b-839b-4648-8480-38914d6b054d.mp4
 
 ## Description
 
 Nutrismart-TV is an video streaming platform to help people easliy find recepies for nutritious food.
 
 ## Live-link : [Nutrismart-TV](https://nutrismart-tv.netlify.app)
+
+## Tech-Stack
+- React.js
+- React hooks
+- Context Api
+- My own component library
+- React router V6
+- Mockbee (mock) backend
 
 ## Features
 
