@@ -4,8 +4,6 @@
 <h2>It is a video streaming platform to help people easliy find recepies for nutritious food.</h2>
 </div>
 
-![](./public/video.mp4)
-
 ## Description
 
 Nutrismart-TV is an video streaming platform to help people easliy find recepies for nutritious food.
