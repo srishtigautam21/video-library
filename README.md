@@ -1,10 +1,10 @@
 <div align="center">
 <img alt="logo" src="public\favicon.ico" />
 <h1 >Nutrismart-TV</h1>
-<h2>Nutrismart-TV is an video streaming platform to help people easliy find recepies for nutritiousfood.</h2>
+<h2>It is a video streaming platform to help people easliy find recepies for nutritious food.</h2>
 </div>
 
-![](./displayVideo.js)
+![](./public/video.mp4)
 
 ## Description
 
