@@ -30,13 +30,17 @@ const Navbar = () => {
                     to='/'
                     onClick={() => {
                       logOut();
-                      setOpen((visible) => !visible);
+                      setOpen(false);
                     }}
                   >
                     Logout
                   </Link>
                 ) : (
-                  <Link className='dropdown-content login-link' to='/login'>
+                  <Link
+                    className='dropdown-content login-link'
+                    to='/login'
+                    onClick={() => setOpen(false)}
+                  >
                     Login
                   </Link>
                 )}

@@ -83,15 +83,28 @@ const PlayListModal = ({ setOpenModal, openModal, video }) => {
             </label>
           </div>
         </div>
-        <button
-          className='no-border save-btn'
-          onClick={() => {
-            playlistHandler();
-            setOpenModal(false);
-          }}
-        >
-          Create Playlist
-        </button>
+        {modal.title === "" && modal.desc === "" ? (
+          <button
+            className='no-border disable-btn'
+            onClick={() => {
+              playlistHandler();
+              setOpenModal(false);
+            }}
+            disabled
+          >
+            Create Playlist
+          </button>
+        ) : (
+          <button
+            className='no-border save-btn'
+            onClick={() => {
+              playlistHandler();
+              setOpenModal(false);
+            }}
+          >
+            Create Playlist
+          </button>
+        )}
       </div>
     </div>,
     document.getElementById("portal")

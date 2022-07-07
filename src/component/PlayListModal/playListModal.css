@@ -89,6 +89,19 @@
 .save-btn:hover {
   background-color: var(--PRIMARY-HOVER);
 }
+.disable-btn {
+  width: 48%;
+  padding: 7px;
+  background-color: var(--COLOR-PRIMARY);
+  opacity: 0.5;
+  font-size: 1.6rem;
+  margin: 9px;
+  border-radius: 0rem;
+  position: absolute;
+  right: 23%;
+  bottom: 1px;
+  color: var(--COLOR-WHITE);
+}
 .margin-right {
   margin-right: 5px;
   margin-top: 5px;

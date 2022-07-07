@@ -1,6 +1,6 @@
 import "./playlistPage.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Footer, PlayListCard } from "../../component";
 import { usePlayList } from "../../context";
 
@@ -24,20 +24,19 @@ const PlaylistPage = () => {
       playlist.find((playlis) => playlis._id === selectedPlaylist)?.videos ?? []
     );
   };
-  //Future TODOs
-  // useEffect(() => {
-  //   if (playlist.length > 0 && selectedPlaylist === "") {
-  //     setSelectedPlaylist(playlist[0]._id);
-  //   } else if (
-  //     playlist.length > 0 &&
-  //     !playlist.find((list) => list._id === selectedPlaylist)
-  //   ) {
-  //     setSelectedPlaylist(playlist[0]._id);
-  //   } else if (playlist.length === 0) {
-  //     setSelectedPlaylist("");
-  //   }
-  // eslint-disable-next-line
-  // }, [playlist]);
+  useEffect(() => {
+    if (playlist.length > 0 && selectedPlaylist === "") {
+      setSelectedPlaylist(playlist[0]._id);
+    } else if (
+      playlist.length > 0 &&
+      !playlist.find((list) => list._id === selectedPlaylist)
+    ) {
+      setSelectedPlaylist(playlist[0]._id);
+    } else if (playlist.length === 0) {
+      setSelectedPlaylist("");
+    }
+    // eslint-disable-next-line
+  }, [playlist]);
 
   return (
     <>

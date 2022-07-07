@@ -1,12 +1,14 @@
 import "./videocard.css";
-import { Link } from "react-router-dom";
-import { useWatchLater } from "../../context";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth, useWatchLater } from "../../context";
 import { PlaylistIcon } from "../../Assets/allsvg";
 import { PlayListModal } from "../../component";
 import { useState } from "react";
 
 const VideoCard = ({ video }) => {
+  const navigate = useNavigate();
   const { addToHistory } = useWatchLater();
+  const { isUserLoggedIn } = useAuth();
   const { title, creator, thumbnail, creatorDp, views, _id } = video;
   const [openModal, setOpenModal] = useState(false);
   return (
@@ -30,7 +32,9 @@ const VideoCard = ({ video }) => {
           </div>
           <PlaylistIcon
             className='video-margin'
-            onClick={() => setOpenModal(true)}
+            onClick={() => {
+              isUserLoggedIn ? setOpenModal(true) : navigate("/login");
+            }}
           />
         </div>
       </div>
