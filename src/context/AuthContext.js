@@ -31,8 +31,8 @@ const AuthProvider = ({ children }) => {
       data: { email: loginUser.email, password: loginUser.password },
     });
     setLoginUser({ email: "", password: "" });
-    navigate(from, { replace: true });
     setIsUserLoggedIn(true);
+    navigate(from, { replace: true });
     loginLogoutToast("Login successful");
   };
 

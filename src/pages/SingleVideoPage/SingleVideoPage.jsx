@@ -1,7 +1,6 @@
-import { useParams, useLocation } from "react-router-dom";
-
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import "./singleVideoPage.css";
-import { useWatchLater, useModal } from "../../context";
+import { useWatchLater, useModal, useAuth } from "../../context";
 import { PlayListModal, Footer } from "../../component";
 import {
   LikeIcon,
@@ -14,6 +13,8 @@ import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 const SingleVideoPage = () => {
   const { id } = useParams();
   const { openModal, setOpenModal } = useModal();
+  const { isUserLoggedIn } = useAuth();
+  const navigate = useNavigate();
   useDocumentTitle("Videos Page");
   const {
     addToWatchLater,
@@ -54,7 +55,11 @@ const SingleVideoPage = () => {
                 {isLiked === -1 ? (
                   <button
                     className='video-btn'
-                    onClick={() => addToLikedVideo(video)}
+                    onClick={() => {
+                      isUserLoggedIn
+                        ? addToLikedVideo(video)
+                        : navigate("/login");
+                    }}
                   >
                     <span>
                       <LikeIcon className='incr-font' />
@@ -77,7 +82,11 @@ const SingleVideoPage = () => {
                 {isInWatchLater === -1 ? (
                   <button
                     className='video-btn'
-                    onClick={() => watchLaterHandler(video)}
+                    onClick={() => {
+                      isUserLoggedIn
+                        ? watchLaterHandler(video)
+                        : navigate("/login");
+                    }}
                   >
                     <span>
                       <ClockIcon className='incr-font' />
@@ -96,7 +105,9 @@ const SingleVideoPage = () => {
               <div className='video-item'>
                 <button
                   className='video-btn'
-                  onClick={() => setOpenModal(true)}
+                  onClick={() => {
+                    isUserLoggedIn ? setOpenModal(true) : navigate("/login");
+                  }}
                 >
                   <span>
                     <PlaylistIcon className='incr-font' />
