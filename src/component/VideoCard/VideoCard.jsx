@@ -17,7 +17,9 @@ const VideoCard = ({ video }) => {
         <Link
           to={`/video/${_id}`}
           state={video}
-          onClick={() => addToHistory(video)}
+          onClick={() => {
+            isUserLoggedIn && addToHistory(video);
+          }}
         >
           <img src={thumbnail} alt={title} />
         </Link>
